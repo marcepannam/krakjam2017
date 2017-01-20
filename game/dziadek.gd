@@ -1,6 +1,7 @@
 extends Node2D
 
 const Y_TOLERANCE = 10
+const X_TOLERANCE = 10
 
 var staff_base_offset
 var staff
@@ -10,6 +11,9 @@ var staff_rps = 0.5
 var staff_target
 
 var target_platform
+
+var STAFF_SPEED = 10
+var JUMP_SPEED = 200
 
 const WAITING = 0
 const STAFF_ANIM = 1
@@ -30,7 +34,6 @@ func _process(delta):
 		var staff_pos = get_global_pos() + staff_base_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
 	elif state == STAFF_ANIM:
-		var STAFF_SPEED = 3
 		var delta = staff.get_global_pos() - staff_target
 		if delta.length() < 5:
 			start_jump()
@@ -38,7 +41,7 @@ func _process(delta):
 		var new_pos = staff.get_global_pos() + delta.normalized() * -STAFF_SPEED
 		staff.set_global_pos(new_pos)
 	elif state == JUMPING:
-		jump_progress += delta * 100
+		jump_progress += delta * JUMP_SPEED
 		var jump_length = (jump_target - jump_start).length()
 		if jump_progress > jump_length:
 			state = WAITING
@@ -88,7 +91,7 @@ func find_platform_at(pos):
 	for platform in platforms:
 		var bpos = platform.get_global_pos()
 		var rect = platform.get_item_rect()
-		if pos.x > (bpos + rect.pos).x and pos.x < (bpos + rect.end).x:
+		if pos.x + X_TOLERANCE > (bpos + rect.pos).x and pos.x - X_TOLERANCE < (bpos + rect.end).x:
 			var y_dist = pos.y - rect.pos.y
 			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
 				best_y_dist = y_dist
