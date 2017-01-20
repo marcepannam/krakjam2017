@@ -2,7 +2,7 @@ extends Node2D
 
 const Y_TOLERANCE = 10
 
-var staff_base_pos
+var staff_base_offset
 var staff
 var staff_angle = 0
 var staff_circle_radius = 50
@@ -16,17 +16,18 @@ const STAFF_ANIM = 1
 const JUMPING = 2
 
 var state = WAITING
+var hero_width = 341
 
 func _ready():
 	set_process(true)
 	set_process_input(true)
 	staff = get_node("body/Node2D/arm_staff/staff")
-	staff_base_pos = staff.get_global_pos()
+	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	
 func _process(delta):
 	if state == WAITING:
 		staff_angle -= staff_rps * 3.1415 * 2 * delta
-		var staff_pos = staff_base_pos + Vector2(staff_circle_radius, 0).rotated(staff_angle)
+		var staff_pos = get_global_pos() + staff_base_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
 	elif state == STAFF_ANIM:
 		var STAFF_SPEED = 3
@@ -43,17 +44,21 @@ func _process(delta):
 			state = WAITING
 			return
 		
+		var staff_target_pos = jump_target + staff_base_offset + Vector2(staff_circle_radius, 0)
+		staff.set_global_pos(jump_staff_start.linear_interpolate(staff_target_pos, jump_progress / jump_length))
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 
 var jump_target
 var jump_start
 var jump_progress
+var jump_staff_start
 
 func start_jump():
 	var platform_width = target_platform.get_item_rect().size.width / 2
 	jump_progress = 0
 	jump_start = get_global_pos()
-	var me_delta = Vector2(10, -120)
+	jump_staff_start = staff.get_global_pos()
+	var me_delta = Vector2(-20, -120)
 	jump_target = target_platform.get_global_pos() + Vector2(platform_width, 0) + me_delta
 	state = JUMPING
 	
@@ -62,6 +67,7 @@ func do_action():
 	target_platform = find_platform_at(staff.get_global_pos())
 	print("target: ", target_platform)
 	if target_platform == null:
+		print("die")
 		return # die
 	else:
 		state = STAFF_ANIM
@@ -82,7 +88,6 @@ func find_platform_at(pos):
 	for platform in platforms:
 		var bpos = platform.get_global_pos()
 		var rect = platform.get_item_rect()
-		print(rect, " ", bpos, " ", pos)
 		if pos.x > (bpos + rect.pos).x and pos.x < (bpos + rect.end).x:
 			var y_dist = pos.y - rect.pos.y
 			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
