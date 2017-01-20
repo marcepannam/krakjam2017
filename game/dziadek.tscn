@@ -56,13 +56,15 @@ __meta__ = { "_edit_bone_":true }
 [node name="arm_lamp" type="Sprite" parent="body"]
 
 transform/pos = Vector2( -33.2117, -119.562 )
+transform/rot = -4.04946
 texture = ExtResource( 5 )
 offset = Vector2( -31.7883, 79.5623 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="lamp" type="Sprite" parent="body/arm_lamp"]
 
-transform/pos = Vector2( 7.40253, 183.211 )
+transform/pos = Vector2( 7.40265, 183.212 )
+transform/rot = 4.04946
 texture = ExtResource( 6 )
 offset = Vector2( 0.809143, 56.3511 )
 __meta__ = { "_edit_bone_":true }
@@ -72,36 +74,55 @@ __meta__ = { "_edit_bone_":true }
 transform/pos = Vector2( 0.464233, 106.694 )
 __meta__ = { "_edit_bone_":true }
 
-[node name="arm_staff" type="Sprite" parent="body"]
+[node name="Node2D" type="Node2D" parent="body"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( 125.941, -141.77 )
-texture = ExtResource( 7 )
-offset = Vector2( 114.059, 1.76965 )
+transform/pos = Vector2( 65.9415, -141.77 )
+transform/rot = 40.257
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
-[node name="staff" type="Sprite" parent="body/arm_staff"]
+[node name="arm_staff" type="Sprite" parent="body/Node2D"]
 
-transform/pos = Vector2( 220.224, 42.5642 )
+visibility/behind_parent = true
+transform/pos = Vector2( 89.4774, 9.6852 )
+transform/rot = -35.3566
+texture = ExtResource( 7 )
+offset = Vector2( 114.059, 1.76965 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="staff" type="Sprite" parent="body/Node2D/arm_staff"]
+
+transform/pos = Vector2( 220.235, 42.5667 )
+transform/rot = -4.90047
+transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 offset = Vector2( 3.83502, 179.205 )
 __meta__ = { "_edit_bone_":true }
 
-[node name="staff_end" type="Position2D" parent="body/arm_staff/staff"]
+[node name="staff_end" type="Position2D" parent="body/Node2D/arm_staff/staff"]
 
 transform/pos = Vector2( -40.5099, 368.548 )
 __meta__ = { "_edit_bone_":true }
 
-[node name="feet" type="Sprite" parent="body"]
+[node name="Node2D1" type="Node2D" parent="body"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( 0, 260 )
-texture = ExtResource( 9 )
+transform/pos = Vector2( -84.0585, 258.23 )
+transform/rot = 29.2864
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
-[node name="feet_end" type="Position2D" parent="body/feet"]
+[node name="feet" type="Sprite" parent="body/Node2D1"]
 
-transform/pos = Vector2( -4.34491, 44.3427 )
+visibility/behind_parent = true
+transform/pos = Vector2( 61.2364, 48.9744 )
+transform/rot = -29.2864
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="feet_end" type="Position2D" parent="body/Node2D1/feet"]
+
+transform/pos = Vector2( -5.34491, 57.492 )
 __meta__ = { "_edit_bone_":true }
 
 
