@@ -7,13 +7,13 @@ var staff_base_offset
 var staff
 var staff_angle = 0
 var staff_circle_radius = 50
-var staff_rps = 0.5
+var staff_rps = 1.5
 var staff_target
 
 var target_platform
 
 var STAFF_SPEED = 10
-var JUMP_SPEED = 200
+var JUMP_SPEED = 500
 
 const WAITING = 0
 const STAFF_ANIM = 1

@@ -33,6 +33,24 @@ transform/pos = Vector2( 617.44, 448.096 )
 transform/scale = Vector2( 1.60336, 1.53452 )
 texture = ExtResource( 1 )
 
+[node name="platform4" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 750.757, 422.249 )
+transform/scale = Vector2( 1.60336, 1.53452 )
+texture = ExtResource( 1 )
+
+[node name="platform5" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 878.632, 385.519 )
+transform/scale = Vector2( 1.60336, 1.53452 )
+texture = ExtResource( 1 )
+
+[node name="platform6" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1003.79, 354.23 )
+transform/scale = Vector2( 1.60336, 1.53452 )
+texture = ExtResource( 1 )
+
 [node name="dziadek" parent="." instance=ExtResource( 2 )]
 
 editor/display_folded = true
