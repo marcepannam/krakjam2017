@@ -14,7 +14,6 @@ var target_platform
 
 var STAFF_SPEED = 1000
 var JUMP_SPEED = 3500
-var ROTATION_PERIOD = 3
 
 const WAITING = 0
 const STAFF_ANIM = 1
@@ -25,9 +24,12 @@ var state = WAITING
 var hero_width = 341
 var animation_player
 var side = 1
+var root
 var body
 var camera
 var background
+var rotationPeriod = 2
+var rotationAmplitude = 5
 
 func _ready():
 	set_process(true)
@@ -35,9 +37,10 @@ func _ready():
 	camera = get_node("/root/Control/Camera2D")
 	staff = get_node("shoulder_staff/arm_staff/staff")
 	body = get_node("hip/body")
+	root = get_node("/root")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
-	background = get_node("/root/Control/level_background/background")
+	background = get_node("/root/Control/level_background/CanvasLayer/background")
 	start_waiting()
 	
 func start_waiting():
@@ -64,15 +67,10 @@ func check_side():
 func _process(delta):
 	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
 	gameTime += delta 
-	var rot = sin(gameTime / ROTATION_PERIOD * 3.1415 * 2) * 10
-	var bgscale = 11
+	var rot = sin(gameTime / rotationPeriod * 3.1415 * 2) * rotationAmplitude
 	var bgsize = background.get_item_rect().end
-	#camera.set_rotd(rot + 180)
-	body.set_rotd(rot) # .rotated(body.get_rot())
-	#print(-bgsize.y/2)
-	var bgmatrix = Matrix32(0, Vector2(0, 0)).scaled(Vector2(bgscale, bgscale)).translated(Vector2(0, 0))
-	bgmatrix = bgmatrix.rotated(body.get_rot()).translated(Vector2(500, 500))
-	background.set_global_transform(bgmatrix)
+	camera.set_rotd(rot + 180)
+	body.set_rotd(rot)
 	
 	if state == WAITING:
 		if not animation_player.is_playing():
