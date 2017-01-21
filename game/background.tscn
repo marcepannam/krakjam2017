@@ -67,7 +67,6 @@ texture = ExtResource( 4 )
 [node name="background_5" type="Sprite" parent="."]
 
 transform/pos = Vector2( 94.6729, -18.4082 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="background_3" type="Sprite" parent="."]
