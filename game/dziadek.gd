@@ -37,7 +37,7 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 	camera = get_node("/root/Control/Camera2D")
-	staff = get_node("shoulder_staff/arm_staff/staff")
+	staff = get_node("shoulder_staff/staff")
 	body = get_node("hip/body")
 	root = get_node("/root")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
