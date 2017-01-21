@@ -1,17 +1,16 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=17 format=1]
 
-[ext_resource path="res://sprites/dziadek/staff.png" type="Texture" id=1]
-[ext_resource path="res://sprites/dziadek/arm_staff.png" type="Texture" id=2]
+[ext_resource path="res://sprites/dziadek/WALKING_STICK.tex" type="Texture" id=1]
+[ext_resource path="res://sprites/dziadek/HAND_l.tex" type="Texture" id=2]
 [ext_resource path="res://sprites/dziadek/CORPUS.tex" type="Texture" id=3]
 [ext_resource path="res://sprites/dziadek/HEAD.tex" type="Texture" id=4]
 [ext_resource path="res://sprites/dziadek/WAS_L.tex" type="Texture" id=5]
 [ext_resource path="res://sprites/dziadek/WAS_R.tex" type="Texture" id=6]
-[ext_resource path="res://sprites/dziadek/arm_lamp.png" type="Texture" id=7]
+[ext_resource path="res://sprites/dziadek/HAND_R.tex" type="Texture" id=7]
 [ext_resource path="res://sprites/dziadek/LIGHTING.tex" type="Texture" id=8]
-[ext_resource path="res://sprites/dziadek/legs.png" type="Texture" id=9]
-[ext_resource path="res://sprites/dziadek/feet.png" type="Texture" id=10]
+[ext_resource path="res://sprites/dziadek/LEGS.tex" type="Texture" id=9]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=1]
 
 resource/name = "falling"
 length = 1.0
@@ -198,9 +197,8 @@ tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.561626, 28.1998, 0.561626 ] }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "jump"
 length = 2.5
 loop = true
 step = 0.1
@@ -275,9 +273,8 @@ tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = { "times":FloatArray( 2 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( -40.8135, -319.458 ) ] }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "rest"
 length = 0.1
 loop = false
 step = 0.1
@@ -482,7 +479,7 @@ tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 40.257 ] }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 
 resource/name = "slipping"
 length = 2.0
@@ -599,9 +596,8 @@ tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = { "times":FloatArray( 0, 0.25, 0.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, -1.6563 ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource/name = "stand"
 length = 1.5
 loop = true
 step = 0.1
@@ -656,9 +652,8 @@ tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = { "times":FloatArray( 0, 0.6, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 7.60181, 199.896 ), Vector2( 7.60181, 187.26 ), Vector2( 7.60181, 199.896 ) ] }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
-resource/name = "stand2"
 length = 1.5
 loop = true
 step = 0.1
@@ -718,9 +713,8 @@ tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = { "times":FloatArray( 0, 1, 1.2, 1.5 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Vector2( -40.8135, -319.458 ), Vector2( -40.8135, -319.458 ), Vector2( -40.8135, -319.458 ), Vector2( -40.8135, -319.458 ) ] }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
-resource/name = "stand3"
 length = 1.5
 loop = true
 step = 0.1
@@ -786,13 +780,11 @@ tracks/10/keys = { "times":FloatArray( 0, 0.5, 1.5 ), "transitions":FloatArray( 
 
 visibility/behind_parent = true
 transform/pos = Vector2( 65.9415, -141.77 )
-transform/scale = Vector2( 1, 1 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="staff" type="Sprite" parent="shoulder_staff"]
 
 transform/pos = Vector2( 294.938, 44.8279 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 offset = Vector2( 3.83502, 179.205 )
 
@@ -829,7 +821,6 @@ __meta__ = { "_edit_ik_":true }
 [node name="head" type="Sprite" parent="hip/body"]
 
 transform/pos = Vector2( 53.5681, -443.45 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( 53.2001, -10.2917 )
 
@@ -873,7 +864,6 @@ __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 transform/pos = Vector2( 7.40265, 183.212 )
 transform/rot = 4.04946
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 offset = Vector2( 0.809143, 56.3511 )
 __meta__ = { "_edit_bone_":true }
@@ -887,14 +877,12 @@ __meta__ = { "_edit_bone_":true }
 
 visibility/behind_parent = true
 transform/pos = Vector2( 3.43277, 219.229 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( -0.268646, 81.8255 )
 
 [node name="feet" type="Sprite" parent="hip/legs"]
 
 transform/pos = Vector2( 18.8366, 161.773 )
-texture = ExtResource( 10 )
 offset = Vector2( 4.45805, 28.8608 )
 
 [node name="feet_end" type="Position2D" parent="hip/legs/feet"]
@@ -906,13 +894,13 @@ transform/pos = Vector2( -0.88686, 86.3528 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/falling = SubResource( 7 )
-anims/jump = SubResource( 1 )
-anims/rest = SubResource( 2 )
-anims/slipping = SubResource( 6 )
-anims/stand = SubResource( 3 )
-anims/stand2 = SubResource( 4 )
-anims/stand3 = SubResource( 5 )
+anims/falling = SubResource( 1 )
+anims/jump = SubResource( 2 )
+anims/rest = SubResource( 3 )
+anims/slipping = SubResource( 4 )
+anims/stand = SubResource( 5 )
+anims/stand2 = SubResource( 6 )
+anims/stand3 = SubResource( 7 )
 next/jump = ""
 next/slipping = ""
 next/stand2 = ""
