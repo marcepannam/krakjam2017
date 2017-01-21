@@ -8,7 +8,6 @@
 
 [node name="Control" type="Control"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -468,6 +467,166 @@ transform/scale = Vector2( 2.5, 2.5 )
 [node name="platform100" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 3182.98, -17159 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform101" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2625.66, -17417 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform102" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2097.79, -17660.4 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform103" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1480.56, -17919.9 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform104" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 935.29, -18186.1 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform105" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1499.37, -18484 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform106" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2215.56, -18712.2 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform107" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2716.26, -18978.4 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform108" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3166.26, -19231.9 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform109" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2675.84, -19495.2 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform110" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2113.14, -19739.9 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform111" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1441.04, -19995.7 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform112" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 978.619, -20283.9 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform113" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1452.01, -20545.6 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform114" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2032.77, -20792.1 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform115" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2588.53, -21040.3 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform116" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3091.23, -21287.1 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform117" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2572.89, -21563.1 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform118" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2044.64, -21827.7 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform119" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1490.48, -22077 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform120" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1010.5, -22394.3 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform121" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1491.78, -22640.8 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform122" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2074.03, -22888.6 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform123" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2578.04, -23179.8 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform124" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3027.59, -23430.6 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform125" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2624.04, -23753.2 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform126" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2006.46, -24084.6 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform127" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1426.4, -24365.8 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform128" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1034.74, -24649.5 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform129" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1455.09, -24974.4 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform130" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1990.08, -25251.4 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform131" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2553.74, -25538 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="platform132" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3037.42, -25797.7 )
 transform/scale = Vector2( 2.5, 2.5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
