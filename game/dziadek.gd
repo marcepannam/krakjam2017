@@ -11,7 +11,6 @@ var staff_target
 
 var target_platform
 
-var staff_speed = 800
 var jump_speed = 3500
 
 const WAITING = 0
@@ -146,6 +145,7 @@ func _process(delta):
 	elif state == WAITING:
 		staff.set_global_pos(get_global_pos() + staff_offset)
 	elif state == STAFF_ANIM:
+		var staff_speed = 800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
 			if not is_space_pressed:
