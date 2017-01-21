@@ -6,7 +6,7 @@ const X_TOLERANCE = 10
 var staff_base_offset
 var staff
 var staff_angle = 0
-var staff_circle_radius = 50
+var staff_circle_radius = 250
 var staff_rps = 1.5
 var staff_target
 
@@ -66,14 +66,16 @@ func start_jump():
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
 	var me_delta = Vector2(-20, -120)
-	jump_target = target_platform.get_global_pos() + Vector2(platform_width, 0) + me_delta
+	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
+	jump_target = platform_pos + Vector2(platform_width, 0) + me_delta
 	state = JUMPING
 	
 func do_action():
 	print(get_pos())
 	print("do action")
 	target_platform = find_platform_at(staff.get_global_pos())
-	print("target: ", target_platform.get_name())
+	if target_platform != null:
+		print("target: ", target_platform.get_name())
 	if target_platform == null:
 		print("die")
 		return # die
@@ -81,7 +83,7 @@ func do_action():
 		state = STAFF_ANIM
 		staff_target = staff.get_global_pos()
 		var staff_height = staff.get_item_rect().size.y * get_scale().y
-		staff_target.y = (target_platform.get_item_rect().pos + target_platform.get_global_pos() ).y - staff_height
+		staff_target.y = target_platform.get_item_rect().pos.y * target_platform.get_scale().y + target_platform.get_global_pos().y - staff_height
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_SPACE && event.pressed == true:
@@ -96,7 +98,9 @@ func find_platform_at(pos):
 	for platform in platforms:
 		var bpos = platform.get_global_pos()
 		var rect = platform.get_item_rect()
-		if pos.x + X_TOLERANCE > (bpos + rect.pos).x and pos.x - X_TOLERANCE < (bpos + rect.end).x:
+		var scale = platform.get_scale()
+		
+		if pos.x + X_TOLERANCE > bpos.x + rect.pos.x * scale.x and pos.x - X_TOLERANCE < bpos.x + rect.end.x * scale.x:
 			var y_dist = pos.y - rect.pos.y
 			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
 				best_y_dist = y_dist
