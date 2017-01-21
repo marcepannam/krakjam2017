@@ -23,7 +23,14 @@ scale = Vector2( 1, 1 )
 transform/pos = Vector2( 400, -800 )
 texture = ExtResource( 2 )
 
-[node name="ViewportSprite" type="Sprite" parent="CanvasLayer"]
+[node name="CanvasLayer 2" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="ViewportSprite" type="Sprite" parent="CanvasLayer 2"]
 
 transform/pos = Vector2( 400, 300 )
 transform/scale = Vector2( 0.67, 0.67 )

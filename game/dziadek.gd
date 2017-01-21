@@ -19,6 +19,7 @@ const WAITING = 0
 const AIMING = 1
 const STAFF_ANIM = 2
 const JUMPING = 3
+const DEATH = 4
 
 var gameTime = 0
 var state = WAITING
@@ -83,7 +84,7 @@ func _process(delta):
 		if not animation_player.is_playing():
 			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])
 
-		staff_angle -= staff_rps * 3.1415 * 2 * delta
+		staff_angle -= staff_rps * 3.1415 * 2 * delta * side
 		var staff_pos = get_global_pos() + staff_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
 	elif state == WAITING:
@@ -105,6 +106,18 @@ func _process(delta):
 		var staff_target_pos = jump_target + staff_offset
 		staff.set_global_pos(jump_staff_start.linear_interpolate(staff_target_pos, jump_progress / jump_length))
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
+	elif state == DEATH:
+		falling_speed += delta * 50
+		var pos = get_global_pos()
+		if pos.y > 2900:
+			print("go to menu")
+			get_tree().change_scene("res://menu.tscn")
+			return
+		pos.y += falling_speed
+		pos.x += side * 20
+		set_global_pos(pos)
+
+var falling_speed = -20
 
 var jump_target
 var jump_start
@@ -116,25 +129,33 @@ func start_jump():
 	jump_progress = 0
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
-	var me_delta = Vector2(-100, -450)
+	var me_delta = Vector2(120, -450)
 	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
-	jump_target = platform_pos + Vector2(platform_width, 0) + me_delta
+	jump_target = platform_pos + Vector2(platform_width / 2, 0) + me_delta
 	state = JUMPING
 	
 func do_action():
 	var STAFF_HEIGHT = 800
 	print("do action ", staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
+	var current_platform = target_platform
 	target_platform = find_platform_at(staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
-	if target_platform != null:
-		print("target: ", target_platform.get_name())
+	
 	if target_platform == null:
-		print("die")
+		die()
 		return # die
 	else:
+		print("target: ", target_platform.get_name())
+		if current_platform != null && target_platform.get_pos().y > current_platform.get_pos().y:
+			die()
+			return
 		state = STAFF_ANIM
 		staff_target = staff.get_global_pos()
 		var staff_height = staff.get_item_rect().size.y * get_scale().y
 		staff_target.y = target_platform.get_item_rect().pos.y * target_platform.get_scale().y + target_platform.get_global_pos().y - staff_height
+
+func die():
+	print("die :( at ", get_global_pos())
+	state = DEATH
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_SPACE:
@@ -161,7 +182,7 @@ func find_platform_at(pos):
 			var y_dist = pos.y - (bpos.y + rect.pos.y * scale.y)
 			print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
 		
-			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
+			if y_dist > Y_TOLERANCE and y_dist < best_y_dist and y_dist < 900:
 				best_y_dist = y_dist
 				best_platform = platform
 	return best_platform
