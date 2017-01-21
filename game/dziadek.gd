@@ -23,10 +23,12 @@ var state = WAITING
 var hero_width = 341
 var animation_player
 var side = 1
+var camera
 
 func _ready():
 	set_process(true)
 	set_process_input(true)
+	camera = get_node("/root/Control/Camera2D")
 	staff = get_node("shoulder_staff/arm_staff/staff")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
@@ -54,6 +56,7 @@ func check_side():
 		side *= -1
 
 func _process(delta):
+	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
 	if state == WAITING:
 		if not animation_player.is_playing():
 			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])
