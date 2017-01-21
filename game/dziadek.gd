@@ -1,6 +1,5 @@
 extends Node2D
 
-const Y_TOLERANCE = 10
 const X_TOLERANCE = 10
 
 var staff_base_offset
@@ -30,9 +29,8 @@ var root
 var body
 var camera
 var background
-var rotationPeriod = 3
-var rotationAmplitude = 10
 var is_space_pressed = false
+var menu_scene = preload("res://menu.tscn")
 
 func _ready():
 	set_process(true)
@@ -47,6 +45,7 @@ func _ready():
 	start_waiting()
 	
 func start_waiting():
+	print("ready ", get_global_pos())
 	if is_space_pressed:
 		state = AIMING
 	else:
@@ -56,24 +55,69 @@ func start_waiting():
 	set_scale(Vector2(side, 1))
 	staff.set_scale(Vector2(side, 1))
 
+func cmp(a, b):
+	return a[0] > b[0]
+
+func get_next_platform():
+	if target_platform == null: return
+	var ordered = []
+	for platform in get_node("/root").get_tree().get_nodes_in_group("platform"):
+		ordered.append([platform.get_pos().y, platform])
+	ordered.sort_custom(self, "cmp")
+	
+	var myIndex = null
+	var i = 0
+	for t in ordered:
+		var platform = t[1]
+		#print(t[0], " ", platform.get_name(), " ", platform.get_pos())
+		if platform == target_platform: myIndex = i
+		i += 1
+	
+	if myIndex == null:
+		print("my platform not found")
+		return
+	
+	if myIndex == ordered.size() - 1:
+		print("WIN!")
+		return
+
+	return ordered[myIndex+1][1]
+
 func check_side():
 	if target_platform == null: return
-	var platforms = get_node("/root").get_tree().get_nodes_in_group("platform")
-	var current_pos = target_platform.get_pos() + target_platform.get_item_rect().pos
-	var ok = false
-	for platform in platforms:
-		var this_pos = platform.get_pos() + platform.get_item_rect().pos
-		if this_pos.y < current_pos.y:
-			if side == 1 and this_pos.x > current_pos.x: ok = true
-			if side == -1 and this_pos.x < current_pos.x: ok = true
-		
-	if not ok:
-		side *= -1
+	
+	var next_platform = get_next_platform()
+	if next_platform == null:
+		win()
+		return
+	
+	if next_platform.get_pos().x > target_platform.get_pos().x:
+		side = 1
+	else:
+		side = -1
+
+func win():
+	pass
+
+func arr_interpolate(arr, v):
+	#print(arr, v)
+	for i in range(arr.size() - 1):
+		if v >= arr[i][0] && v < arr[i+1][0]:
+			var alpha = (v - arr[i][0]) / float(arr[i+1][0] - arr[i][0])
+			return (1-alpha) * arr[i][1] + alpha * arr[i+1][1]
+	return arr[0][1]
 
 func _process(delta):
 	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
 	gameTime += delta 
-	var rot = sin(gameTime / rotationPeriod * 3.1415 * 2) * rotationAmplitude
+	
+	var player_y = -get_global_pos().y
+	
+	var steps = [[-3000, 0], [-300, 0], [0, 10], [700, 20], [1500, 30], [100000, 30]]
+	var rotation_amplitude = arr_interpolate(steps, player_y)
+	var rotation_period = 3
+		
+	var rot = sin(gameTime / rotation_period * 3.1415 * 2) * rotation_amplitude
 	var bgsize = background.get_item_rect().end
 	camera.set_rotd(rot + 180)
 	body.set_rotd(rot)
@@ -108,14 +152,18 @@ func _process(delta):
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 	elif state == DEATH:
 		falling_speed += delta * 50
-		var pos = get_global_pos()
+		var pos = get_global_pos()	
 		if pos.y > 2900:
 			print("go to menu")
-			get_tree().change_scene("res://menu.tscn")
+			get_tree().change_scene_to(menu_scene)
 			return
 		pos.y += falling_speed
 		pos.x += side * 20
 		set_global_pos(pos)
+		
+		var staff_pos = staff.get_pos()
+		staff_pos.y += 40 * delta;
+		staff.set_pos(staff_pos)
 
 var falling_speed = -20
 
@@ -123,13 +171,13 @@ var jump_target
 var jump_start
 var jump_progress
 var jump_staff_start
-
+	
 func start_jump():
 	var platform_width = target_platform.get_item_rect().size.width / 2
+	var me_delta = Vector2(120, -450)
 	jump_progress = 0
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
-	var me_delta = Vector2(120, -450)
 	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
 	jump_target = platform_pos + Vector2(platform_width / 2, 0) + me_delta
 	state = JUMPING
@@ -158,6 +206,12 @@ func die():
 	state = DEATH
 
 func _input(event):
+	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
+		target_platform = get_next_platform()
+		staff_target = staff.get_global_pos()
+		state = STAFF_ANIM
+		return
+		
 	if event.type == InputEvent.KEY and event.scancode == KEY_SPACE:
 		if event.pressed == true:
 			is_space_pressed = true
@@ -180,9 +234,11 @@ func find_platform_at(pos):
 		var scale = platform.get_scale()
 		if pos.x + X_TOLERANCE > bpos.x + rect.pos.x * scale.x and pos.x - X_TOLERANCE < bpos.x + rect.end.x * scale.x:
 			var y_dist = pos.y - (bpos.y + rect.pos.y * scale.y)
-			print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
-		
-			if y_dist > Y_TOLERANCE and y_dist < best_y_dist and y_dist < 900:
+			y_dist = 540 - y_dist
+			#print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
+			# wysoko: 123, nisko: 380, bardzo: 535
+			if y_dist > 0 and y_dist < best_y_dist and y_dist < 500:
 				best_y_dist = y_dist
 				best_platform = platform
+	print("BEST: ",best_y_dist)
 	return best_platform
