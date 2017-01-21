@@ -1,6 +1,7 @@
 extends Node2D
 var blink_timer = -1
-var lights_on = true;
+var lights_on = true
+var start_zoom = false
 
 var light_on_0 = preload("res://sprites/world/ligth_on_0.tex")
 var light_on_1 = preload("res://sprites/world/ligth_on_1.tex")
@@ -22,6 +23,7 @@ func _process(delta):
 		blink_timer -= delta * 50
 		if(blink_timer <= 0):
 			lights_off()
+			start_zoom = true
 		elif((randi() % 600) < blink_timer):
 			if(lights_on):
 				lights_off()
@@ -31,6 +33,7 @@ func _process(delta):
 func blink():
 	blink_timer = 100
 	lights_off()
+	
 	
 
 func lights_off():
