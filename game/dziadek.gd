@@ -20,6 +20,8 @@ const STAFF_ANIM = 2
 const JUMPING = 3
 const DEATH = 4
 
+# AIMING -> STAFF_ANIM -> WAITING -> JUMPING -> AIMING
+
 var gameTime = 0
 var state = WAITING
 var hero_width = 341
@@ -47,10 +49,7 @@ func _ready():
 	
 func start_waiting():
 	print("ready ", get_global_pos())
-	if is_space_pressed:
-		state = AIMING
-	else:
-		state = WAITING
+	state = AIMING
 	# Should we rotate? Count platforms on the right and above.
 	check_side()
 	set_scale(Vector2(side, 1))
@@ -149,7 +148,8 @@ func _process(delta):
 	elif state == STAFF_ANIM:
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
-			start_jump()
+			if not is_space_pressed:
+				start_jump()
 			return
 		var new_pos = staff.get_global_pos() + vdelta.normalized() * -staff_speed * delta
 		staff.set_global_pos(new_pos)
@@ -196,6 +196,7 @@ func start_jump():
 	state = JUMPING
 	
 func do_action():
+	# AIMING -> STAFF_ANIM
 	var STAFF_HEIGHT = 800
 	print("do action ", staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
 	var current_platform = target_platform
@@ -228,13 +229,12 @@ func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_SPACE:
 		if event.pressed == true:
 			is_space_pressed = true
-			if state == WAITING:
-				state = AIMING
+			if state == AIMING:
+				do_action()
 		else:
 			is_space_pressed = false
-			if state == AIMING:
-				state = WAITING
-				do_action()
+			if state == WAITING:
+				do_jump()
 # utils
 
 func find_platform_at(pos):
