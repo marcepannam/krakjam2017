@@ -56,19 +56,42 @@ func start_waiting():
 	set_scale(Vector2(side, 1))
 	staff.set_scale(Vector2(side, 1))
 
+func cmp(a, b):
+	return a[0] > b[0]
+
+func get_next_platform():
+	if target_platform == null: return
+	var ordered = []
+	for platform in get_node("/root").get_tree().get_nodes_in_group("platform"):
+		ordered.append([platform.get_pos().y, platform])
+	ordered.sort_custom(self, "cmp")
+	
+	var myIndex = null
+	var i = 0
+	for t in ordered:
+		var platform = t[1]
+		print(t[0], " ", platform.get_name(), " ", platform.get_pos())
+		if platform == target_platform: myIndex = i
+		i += 1
+	
+	if myIndex == null:
+		print("my platform not found")
+		return
+	
+	if myIndex == ordered.size() - 1:
+		print("WIN!")
+		return
+
+	return ordered[myIndex+1][1]
+
 func check_side():
 	if target_platform == null: return
-	var platforms = get_node("/root").get_tree().get_nodes_in_group("platform")
-	var current_pos = target_platform.get_pos() + target_platform.get_item_rect().pos
-	var ok = false
-	for platform in platforms:
-		var this_pos = platform.get_pos() + platform.get_item_rect().pos
-		if this_pos.y < current_pos.y and current_pos.y - this_pos.y < 700:
-			if side == 1 and this_pos.x > current_pos.x: ok = true
-			if side == -1 and this_pos.x < current_pos.x: ok = true
-		
-	if not ok:
-		side *= -1
+	
+	var next_platform = get_next_platform()
+	if next_platform.get_pos().x > target_platform.get_pos().x:
+		side = 1
+	else:
+		side = -1
 
 func arr_interpolate(arr, v):
 	#print(arr, v)
@@ -142,13 +165,13 @@ var jump_target
 var jump_start
 var jump_progress
 var jump_staff_start
-
+	
 func start_jump():
 	var platform_width = target_platform.get_item_rect().size.width / 2
+	var me_delta = Vector2(120, -450)
 	jump_progress = 0
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
-	var me_delta = Vector2(120, -450)
 	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
 	jump_target = platform_pos + Vector2(platform_width / 2, 0) + me_delta
 	state = JUMPING
@@ -177,6 +200,12 @@ func die():
 	state = DEATH
 
 func _input(event):
+	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
+		target_platform = get_next_platform()
+		staff_target = staff.get_global_pos()
+		state = STAFF_ANIM
+		return
+		
 	if event.type == InputEvent.KEY and event.scancode == KEY_SPACE:
 		if event.pressed == true:
 			is_space_pressed = true

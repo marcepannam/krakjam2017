@@ -18,14 +18,14 @@ var scene = preload("res://level1.tscn")
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_SPACE:
-		get_tree().change_scene_to(scene)
+		get_node("background").blink()
 
 func _process(delta):
 	if(not zooming):
 		if(get_node("background").start_zoom):
 			start_animation()
 	elif(not get_node("AnimationPlayer").is_playing()):
-		if(countdown > 0.5):
+		if(countdown > 0):
 			get_tree().change_scene_to(scene);
 		else:
 			countdown += delta
