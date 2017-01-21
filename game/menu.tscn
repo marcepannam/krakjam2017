@@ -4,7 +4,7 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends Node2D\n\nfunc _ready():\n    get_node(\"play_button\").connect(\"pressed\",self,\"_on_play_pressed\")\n    get_node(\"exit_button\").connect(\"pressed\",self,\"_on_exit_pressed\")\n\nfunc _on_play_pressed():\n\tget_node(\"background\").lights_off()\n\t\nfunc _on_exit_pressed():\n\tget_tree().quit()"
+script/source = "extends Node2D\n\nfunc _ready():\n    get_node(\"play_button\").connect(\"pressed\",self,\"_on_play_pressed\")\n    get_node(\"exit_button\").connect(\"pressed\",self,\"_on_exit_pressed\")\n\nfunc _on_play_pressed():\n\tget_node(\"background\").blink()\n\t\nfunc _on_exit_pressed():\n\tget_tree().quit()"
 
 [node name="menu" type="Node2D"]
 
