@@ -26,7 +26,7 @@ var animation_player
 func _ready():
 	set_process(true)
 	set_process_input(true)
-	staff = get_node("body/Node2D/arm_staff/staff")
+	staff = get_node("shoulder_staff/arm_staff/staff")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
 	
@@ -73,7 +73,7 @@ func do_action():
 	print(get_pos())
 	print("do action")
 	target_platform = find_platform_at(staff.get_global_pos())
-	print("target: ", target_platform)
+	print("target: ", target_platform.get_name())
 	if target_platform == null:
 		print("die")
 		return # die

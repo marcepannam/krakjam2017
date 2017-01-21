@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="284.84357"
-     inkscape:cy="541.47241"
+     inkscape:zoom="0.175"
+     inkscape:cx="380.20774"
+     inkscape:cy="844.97316"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -37,7 +37,8 @@
      inkscape:bbox-nodes="true"
      inkscape:object-nodes="true"
      showborder="false"
-     inkscape:snap-global="false">
+     inkscape:snap-global="true"
+     inkscape:snap-bbox-edge-midpoints="true">
     <sodipodi:guide
        position="103.03557,577.80727"
        orientation="1,0"
@@ -46,6 +47,10 @@
        position="313.14729,577.80727"
        orientation="1,0"
        id="guide4145" />
+    <sodipodi:guide
+       position="-830.69123,2533.5585"
+       orientation="0,1"
+       id="guide4478" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -64,240 +69,318 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g4315"
-       inkscape:transform-center-x="-7.8258866"
-       inkscape:transform-center-y="65.77347"
-       transform="matrix(0.99998527,0.00542853,-0.00542853,0.99998527,18.775592,18.941252)">
+       id="g4383">
       <g
-         id="g4311">
-        <rect
-           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-           id="rect4307"
-           width="37.375645"
-           height="128.50552"
-           x="128.8811"
-           y="440.56509"
-           ry="18.687822"
-           rx="18.687822" />
-        <rect
-           rx="18.687822"
-           ry="18.687822"
-           y="447.5549"
-           x="214.59538"
-           height="128.50552"
-           width="37.375645"
-           id="rect4309"
-           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+         transform="matrix(0.99998527,0.00542853,-0.00542853,0.99998527,18.775592,18.941252)"
+         inkscape:transform-center-y="65.77347"
+         inkscape:transform-center-x="-7.8258866"
+         id="g4315">
+        <g
+           inkscape:export-ydpi="146"
+           inkscape:export-xdpi="146"
+           inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/legs.png"
+           id="g4311">
+          <rect
+             rx="18.687822"
+             ry="18.687822"
+             y="440.56509"
+             x="128.8811"
+             height="128.50552"
+             width="37.375645"
+             id="rect4307"
+             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+          <rect
+             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+             id="rect4309"
+             width="37.375645"
+             height="128.50552"
+             x="214.59538"
+             y="447.5549"
+             ry="18.687822"
+             rx="18.687822" />
+        </g>
+        <path
+           id="feet"
+           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+           d="m 128.26173,557.75121 c 2.86055,-1.68423 -5.44561,48.95802 -5.44561,48.95802 l 58.35061,0.4187 c 0,0 20.50492,-6.58222 19.65666,-23.92762 -0.84826,-17.34539 -28.66919,-13.77659 -28.66919,-13.77659 l -5.45116,-16.54173 m 46.58141,8.90983 c 2.86055,-1.68423 -4.43545,44.91741 -4.43545,44.91741 l 58.35061,0.4187 c 0,0 20.50492,-6.58222 19.65665,-23.92762 -0.84825,-17.34539 -28.66918,-13.77659 -28.66918,-13.77659 l -6.46132,-12.50112"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccscccccscc"
+           inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/feet.png"
+           inkscape:export-xdpi="146"
+           inkscape:export-ydpi="146">
+          <title
+             id="title4263">Feet</title>
+        </path>
       </g>
       <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/arm_staff.png"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 316.54276,198.9862 -3.39234,53.77764 142.68979,7.48001 c 0,0 26.26676,-6.68965 26.39138,-28.16543 0.12461,-21.47577 -35.14531,-19.01964 -35.14531,-19.01964 l -19.94764,-1.44615"
+         id="arm_staff"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccscc">
+        <title
+           id="title4265">Arm Staff</title>
+      </path>
+      <ellipse
          inkscape:export-ydpi="146"
          inkscape:export-xdpi="146"
-         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/feet.png"
-         sodipodi:nodetypes="cccscccccscc"
+         ry="61.619305"
+         rx="90.913727"
+         cy="378.59045"
+         cx="224.25386"
+         id="path4136"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/body.png"
+         sodipodi:nodetypes="ssccss"
          inkscape:connector-curvature="0"
-         d="m 128.26173,557.75121 c 2.86055,-1.68423 -5.44561,48.95802 -5.44561,48.95802 l 58.35061,0.4187 c 0,0 20.50492,-6.58222 19.65666,-23.92762 -0.84826,-17.34539 -28.66919,-13.77659 -28.66919,-13.77659 l -5.45116,-16.54173 m 46.58141,8.90983 c 2.86055,-1.68423 -4.43545,44.91741 -4.43545,44.91741 l 58.35061,0.4187 c 0,0 20.50492,-6.58222 19.65665,-23.92762 -0.84825,-17.34539 -28.66918,-13.77659 -28.66918,-13.77659 l -6.46132,-12.50112"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-         id="feet">
+         id="body"
+         d="m 256.66323,163.63086 c -58.02132,-6e-4 -152.15885,106.3402 -152.61792,186.67609 l -1.01015,176.77508 210.11132,0 0,-197.98828 c 3.7e-4,-80.33615 1.5373,-165.46199 -56.48325,-165.46289 z"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
         <title
-           id="title4263">Feet</title>
+           id="title4257">Body</title>
+      </path>
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/head.png"
+         inkscape:label="#head"
+         sodipodi:nodetypes="sccccccs"
+         inkscape:connector-curvature="0"
+         id="head"
+         d="m 292.60468,66.491251 c -35.51811,7.29e-4 -64.31092,29.093915 -64.31106,64.982029 0.0333,24.83515 14.07296,47.47925 36.17482,58.34496 l 12.39352,90.37836 63.30939,-2.34471 14.06833,-120.25007 c -5.21659,1.2305 2.62073,-19.9355 2.67865,-26.12854 -1.4e-4,-35.889144 -28.79451,-64.982732 -64.31365,-64.982029 z"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4251">Head</title>
+      </path>
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/lamp.png"
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="lamp"
+         d="m 192.95944,377.47878 25.25382,-18.18275 25.25381,18.18275 0,76.7716 -50.50763,0 z"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4261">Lamp</title>
+      </path>
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/arm_lamp.png"
+         sodipodi:nodetypes="cccsccc"
+         inkscape:connector-curvature="0"
+         id="arm_lamp"
+         d="m 196.33725,243.15822 c 4.04061,1.01016 -53.90574,72.80278 -53.90574,72.80278 l 52.52793,51.51778 c 0,0 24.24366,12.12183 38.3858,-4.04061 14.14213,-16.16244 -14.14214,-37.37565 -14.14214,-37.37565 l -14.14213,-14.14213 30.30457,-39.39595"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4259">Arm Lamp</title>
+      </path>
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/mustache_r.png"
+         inkscape:connector-curvature="0"
+         id="mustache_r"
+         d="m 249.29724,163.63086 0,35.35534 63.85318,-18.18274 z"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4255">Right Mustache</title>
+      </path>
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/mustache_l.png"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 366.4401,163.63086 0,35.35534 -53.28968,-18.18274 z"
+         id="mustache_l"
+         inkscape:connector-curvature="0">
+        <title
+           id="title4253">Left Mustache</title>
+      </path>
+      <path
+         inkscape:export-ydpi="146.61803"
+         inkscape:export-xdpi="146.61803"
+         inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/staff.png"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="staff"
+         d="m 440.3576,240.26834 c 22.76912,5.73144 43.04756,1.48151 58.21508,-7.99026 l 9.05324,13.3474 c -9.31965,7.42247 -31.57722,19.27483 -51.78571,14.61837 l 1.42857,220.59954 -16.91118,0 z"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4267">Staff</title>
       </path>
     </g>
-    <path
-       sodipodi:nodetypes="cccscc"
-       inkscape:connector-curvature="0"
-       id="arm_staff"
-       d="m 316.54276,198.9862 -3.39234,53.77764 142.68979,7.48001 c 0,0 26.26676,-6.68965 26.39138,-28.16543 0.12461,-21.47577 -35.14531,-19.01964 -35.14531,-19.01964 l -19.94764,-1.44615"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/arm_staff.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4265">Arm Staff</title>
-    </path>
-    <ellipse
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       id="path4136"
-       cx="224.25386"
-       cy="378.59045"
-       rx="90.913727"
-       ry="61.619305"
-       inkscape:export-xdpi="146"
-       inkscape:export-ydpi="146" />
-    <path
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 256.66323,163.63086 c -58.02132,-6e-4 -152.15885,106.3402 -152.61792,186.67609 l -1.01015,176.77508 210.11132,0 0,-197.98828 c 3.7e-4,-80.33615 1.5373,-165.46199 -56.48325,-165.46289 z"
-       id="body"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ssccss"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/body.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4257">Body</title>
-    </path>
-    <path
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 292.60468,66.491251 c -35.51811,7.29e-4 -64.31092,29.093915 -64.31106,64.982029 0.0333,24.83515 14.07296,47.47925 36.17482,58.34496 l 12.39352,90.37836 63.30939,-2.34471 14.06833,-120.25007 c -5.21659,1.2305 2.62073,-19.9355 2.67865,-26.12854 -1.4e-4,-35.889144 -28.79451,-64.982732 -64.31365,-64.982029 z"
-       id="head"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sccccccs"
-       inkscape:label="#head"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/head.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4251">Head</title>
-    </path>
-    <path
+    <g
+       id="g4338"
+       transform="translate(1714.2857,-714.28571)">
+      <path
+         id="path4269"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1152.129,493.50755 c 2.8606,-1.68423 -6.4557,73.20168 -6.4557,73.20168 l 58.3506,0.4187 c 0,0 20.5049,-6.58222 19.6566,-23.92762 -0.8482,-17.34539 -28.6692,-13.77659 -28.6692,-13.77659 l -4.441,-40.78539 m 47.5916,4.86922 c 2.8606,-1.68423 -6.4558,73.20168 -6.4558,73.20168 l 58.3507,0.4187 c 0,0 20.5049,-6.58222 19.6566,-23.92762 -0.8482,-17.34539 -28.6692,-13.77659 -28.6692,-13.77659 l -4.441,-40.78539"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccscccccscc">
+        <title
+           id="title4271">Feet</title>
+      </path>
+      <path
+         sodipodi:nodetypes="cccscc"
+         inkscape:connector-curvature="0"
+         id="path4273"
+         d="m 1279.3999,198.9862 -3.3923,53.77764 142.6898,7.48001 c 0,0 26.2667,-6.68965 26.3913,-28.16543 0.1246,-21.47577 -35.1453,-19.01964 -35.1453,-19.01964 l -19.9476,-1.44615"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4275">Arm Staff</title>
+      </path>
+      <ellipse
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         id="ellipse4277"
+         cx="1247.111"
+         cy="378.59045"
+         rx="90.913727"
+         ry="61.619305" />
+      <path
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1279.5204,163.63086 c -58.0213,-6e-4 -152.1589,106.3402 -152.6179,186.67609 l -1.0102,176.77508 210.1113,0 0,-197.98828 c 4e-4,-80.33615 1.5373,-165.46199 -56.4832,-165.46289 z"
+         id="path4279"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ssccss">
+        <title
+           id="title4281">Body</title>
+      </path>
+      <path
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1335.4618,66.491251 c -35.5181,7.29e-4 -64.3109,29.093915 -64.311,64.982029 0.033,24.83515 14.0729,47.47925 36.1748,58.34496 l 12.3935,90.37836 63.3094,-2.34471 14.0683,-120.25007 c -5.2166,1.2305 2.6208,-19.9355 2.6787,-26.12854 -2e-4,-35.889144 -28.7945,-64.982732 -64.3137,-64.982029 z"
+         id="path4283"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sccccccs"
+         inkscape:label="#head">
+        <title
+           id="title4285">Head</title>
+      </path>
+      <path
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1158.2379,368.38741 25.2538,-18.18275 25.2538,18.18275 0,76.7716 -50.5076,0 z"
+         id="path4287"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc">
+        <title
+           id="title4289">Lamp</title>
+      </path>
+      <path
+         inkscape:transform-center-y="49.364726"
+         inkscape:transform-center-x="35.804525"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1225.2554,240.39067 c 2.8282,3.05746 -84.9672,31.41089 -84.9672,31.41089 l 15.7518,71.86893 c 0,0 13.6511,23.41659 34.3342,17.63402 20.6829,-5.78262 8.6277,-39.01926 8.6277,-39.01926 l -4.0919,-19.57689 46.9279,-16.37636"
+         id="path4291"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccsccc">
+        <title
+           id="title4293">Arm Lamp</title>
+      </path>
+      <path
+         inkscape:transform-center-y="-19.292736"
+         inkscape:transform-center-x="30.041064"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1301.4169,145.14435 -11.2512,33.51731 66.3199,3.08272 z"
+         id="path4295"
+         inkscape:connector-curvature="0">
+        <title
+           id="title4297">Right Mustache</title>
+      </path>
+      <path
+         inkscape:transform-center-y="-13.891644"
+         inkscape:transform-center-x="-27.516686"
+         inkscape:connector-curvature="0"
+         id="path4299"
+         d="m 1402.2894,149.07791 10.3031,33.82081 -56.2754,-1.86418 z"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
+        <title
+           id="title4301">Left Mustache</title>
+      </path>
+      <path
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 1403.2147,240.26834 c 22.7692,5.73144 43.0476,1.48151 58.2151,-7.99026 l 9.0533,13.3474 c -9.3197,7.42247 -31.5773,19.27483 -51.7857,14.61837 l 1.4285,220.59954 -16.9112,0 z"
+         id="path4303"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc">
+        <title
+           id="title4305">Staff</title>
+      </path>
+    </g>
+    <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 192.95944,377.47878 25.25382,-18.18275 25.25381,18.18275 0,76.7716 -50.50763,0 z"
-       id="lamp"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/lamp.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4261">Lamp</title>
-    </path>
-    <path
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 196.33725,243.15822 c 4.04061,1.01016 -53.90574,72.80278 -53.90574,72.80278 l 52.52793,51.51778 c 0,0 24.24366,12.12183 38.3858,-4.04061 14.14213,-16.16244 -14.14214,-37.37565 -14.14214,-37.37565 l -14.14213,-14.14213 30.30457,-39.39595"
-       id="arm_lamp"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccsccc"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/arm_lamp.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4259">Arm Lamp</title>
-    </path>
-    <path
+       id="rect4322"
+       width="337.14285"
+       height="54.285713"
+       x="32.865135"
+       y="626.24451"
+       rx="0"
+       ry="0" />
+    <rect
+       ry="0"
+       rx="0"
+       y="486.84338"
+       x="380.3576"
+       height="54.285713"
+       width="337.14285"
+       id="rect4324"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 249.29724,163.63086 0,35.35534 63.85318,-18.18274 z"
-       id="mustache_r"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/mustache_r.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4255">Right Mustache</title>
-    </path>
-    <path
-       inkscape:connector-curvature="0"
-       id="mustache_l"
-       d="m 366.4401,163.63086 0,35.35534 -53.28968,-18.18274 z"
+       id="rect4330"
+       width="337.14285"
+       height="54.285713"
+       x="727.8501"
+       y="347.44232"
+       rx="0"
+       ry="0" />
+    <rect
+       ry="0"
+       rx="0"
+       y="765.64551"
+       x="-314.62732"
+       height="54.285713"
+       width="337.14285"
+       id="rect4334"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
+       ry="0"
+       rx="0"
+       y="208.04126"
+       x="1075.3425"
+       height="54.285713"
+       width="505.71426"
+       id="rect4466"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
+       ry="0"
+       rx="0"
+       y="905.04657"
+       x="-830.69116"
+       height="54.285713"
+       width="505.71426"
+       id="rect4472"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/mustache_l.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4253">Left Mustache</title>
-    </path>
-    <path
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 440.3576,240.26834 c 22.76912,5.73144 43.04756,1.48151 58.21508,-7.99026 l 9.05324,13.3474 c -9.31965,7.42247 -31.57722,19.27483 -51.78571,14.61837 l 1.42857,220.59954 -16.91118,0 z"
-       id="staff"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="/Users/TM1/Documents/Zlecenia/Krakjam 2017/game/sprites/dziadek/staff.png"
-       inkscape:export-xdpi="146.61803"
-       inkscape:export-ydpi="146.61803">
-      <title
-         id="title4267">Staff</title>
-    </path>
-    <path
-       sodipodi:nodetypes="cccscccccscc"
-       inkscape:connector-curvature="0"
-       d="m 1152.129,493.50755 c 2.8606,-1.68423 -6.4557,73.20168 -6.4557,73.20168 l 58.3506,0.4187 c 0,0 20.5049,-6.58222 19.6566,-23.92762 -0.8482,-17.34539 -28.6692,-13.77659 -28.6692,-13.77659 l -4.441,-40.78539 m 47.5916,4.86922 c 2.8606,-1.68423 -6.4558,73.20168 -6.4558,73.20168 l 58.3507,0.4187 c 0,0 20.5049,-6.58222 19.6566,-23.92762 -0.8482,-17.34539 -28.6692,-13.77659 -28.6692,-13.77659 l -4.441,-40.78539"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       id="path4269">
-      <title
-         id="title4271">Feet</title>
-    </path>
-    <path
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 1279.3999,198.9862 -3.3923,53.77764 142.6898,7.48001 c 0,0 26.2667,-6.68965 26.3913,-28.16543 0.1246,-21.47577 -35.1453,-19.01964 -35.1453,-19.01964 l -19.9476,-1.44615"
-       id="path4273"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccscc">
-      <title
-         id="title4275">Arm Staff</title>
-    </path>
-    <ellipse
-       ry="61.619305"
-       rx="90.913727"
-       cy="378.59045"
-       cx="1247.111"
-       id="ellipse4277"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-    <path
-       sodipodi:nodetypes="ssccss"
-       inkscape:connector-curvature="0"
-       id="path4279"
-       d="m 1279.5204,163.63086 c -58.0213,-6e-4 -152.1589,106.3402 -152.6179,186.67609 l -1.0102,176.77508 210.1113,0 0,-197.98828 c 4e-4,-80.33615 1.5373,-165.46199 -56.4832,-165.46289 z"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
-      <title
-         id="title4281">Body</title>
-    </path>
-    <path
-       inkscape:label="#head"
-       sodipodi:nodetypes="sccccccs"
-       inkscape:connector-curvature="0"
-       id="path4283"
-       d="m 1335.4618,66.491251 c -35.5181,7.29e-4 -64.3109,29.093915 -64.311,64.982029 0.033,24.83515 14.0729,47.47925 36.1748,58.34496 l 12.3935,90.37836 63.3094,-2.34471 14.0683,-120.25007 c -5.2166,1.2305 2.6208,-19.9355 2.6787,-26.12854 -2e-4,-35.889144 -28.7945,-64.982732 -64.3137,-64.982029 z"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
-      <title
-         id="title4285">Head</title>
-    </path>
-    <path
-       sodipodi:nodetypes="cccccc"
-       inkscape:connector-curvature="0"
-       id="path4287"
-       d="m 1158.2379,368.38741 25.2538,-18.18275 25.2538,18.18275 0,76.7716 -50.5076,0 z"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
-      <title
-         id="title4289">Lamp</title>
-    </path>
-    <path
-       sodipodi:nodetypes="cccsccc"
-       inkscape:connector-curvature="0"
-       id="path4291"
-       d="m 1225.2554,240.39067 c 2.8282,3.05746 -84.9672,31.41089 -84.9672,31.41089 l 15.7518,71.86893 c 0,0 13.6511,23.41659 34.3342,17.63402 20.6829,-5.78262 8.6277,-39.01926 8.6277,-39.01926 l -4.0919,-19.57689 46.9279,-16.37636"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:transform-center-x="35.804525"
-       inkscape:transform-center-y="49.364726">
-      <title
-         id="title4293">Arm Lamp</title>
-    </path>
-    <path
-       inkscape:connector-curvature="0"
-       id="path4295"
-       d="m 1301.4169,145.14435 -11.2512,33.51731 66.3199,3.08272 z"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:transform-center-x="30.041064"
-       inkscape:transform-center-y="-19.292736">
-      <title
-         id="title4297">Right Mustache</title>
-    </path>
-    <path
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 1402.2894,149.07791 10.3031,33.82081 -56.2754,-1.86418 z"
-       id="path4299"
-       inkscape:connector-curvature="0"
-       inkscape:transform-center-x="-27.516686"
-       inkscape:transform-center-y="-13.891644">
-      <title
-         id="title4301">Left Mustache</title>
-    </path>
-    <path
-       sodipodi:nodetypes="ccccccc"
-       inkscape:connector-curvature="0"
-       id="path4303"
-       d="m 1403.2147,240.26834 c 22.7692,5.73144 43.0476,1.48151 58.2151,-7.99026 l 9.0533,13.3474 c -9.3197,7.42247 -31.5773,19.27483 -51.7857,14.61837 l 1.4285,220.59954 -16.9112,0 z"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">
-      <title
-         id="title4305">Staff</title>
-    </path>
+       id="rect4474"
+       width="258.59906"
+       height="2440.5286"
+       x="-1089.2903"
+       y="-1001.1963" />
+    <rect
+       y="-1001.1963"
+       x="1581.0568"
+       height="2440.5286"
+       width="258.59906"
+       id="rect4476"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
   </g>
 </svg>
