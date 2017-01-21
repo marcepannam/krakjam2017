@@ -2,12 +2,12 @@
 
 [ext_resource path="res://sprites/dziadek/staff.png" type="Texture" id=1]
 [ext_resource path="res://sprites/dziadek/arm_staff.png" type="Texture" id=2]
-[ext_resource path="res://sprites/dziadek/body.png" type="Texture" id=3]
-[ext_resource path="res://sprites/dziadek/head.png" type="Texture" id=4]
-[ext_resource path="res://sprites/dziadek/mustache_r.png" type="Texture" id=5]
-[ext_resource path="res://sprites/dziadek/mustache_l.png" type="Texture" id=6]
+[ext_resource path="res://sprites/dziadek/CORPUS.tex" type="Texture" id=3]
+[ext_resource path="res://sprites/dziadek/HEAD.tex" type="Texture" id=4]
+[ext_resource path="res://sprites/dziadek/WAS_L.tex" type="Texture" id=5]
+[ext_resource path="res://sprites/dziadek/WAS_R.tex" type="Texture" id=6]
 [ext_resource path="res://sprites/dziadek/arm_lamp.png" type="Texture" id=7]
-[ext_resource path="res://sprites/dziadek/lamp.png" type="Texture" id=8]
+[ext_resource path="res://sprites/dziadek/LIGHTING.tex" type="Texture" id=8]
 [ext_resource path="res://sprites/dziadek/legs.png" type="Texture" id=9]
 [ext_resource path="res://sprites/dziadek/feet.png" type="Texture" id=10]
 
