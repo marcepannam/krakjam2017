@@ -12,8 +12,8 @@ var staff_target
 
 var target_platform
 
-var STAFF_SPEED = 10
-var JUMP_SPEED = 500
+var STAFF_SPEED = 1000
+var JUMP_SPEED = 3500
 
 const WAITING = 0
 const STAFF_ANIM = 1
@@ -22,6 +22,7 @@ const JUMPING = 2
 var state = WAITING
 var hero_width = 341
 var animation_player
+var side = -1
 
 func _ready():
 	set_process(true)
@@ -29,29 +30,37 @@ func _ready():
 	staff = get_node("shoulder_staff/arm_staff/staff")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
+	start_waiting()
 	
+func start_waiting():
+	state = WAITING
+	set_scale(Vector2(side, 1))
+	staff.set_scale(Vector2(side, 1))
+
 func _process(delta):
 	if state == WAITING:
 		if not animation_player.is_playing():
-			animation_player.play("stand")
+			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])
+
 		staff_angle -= staff_rps * 3.1415 * 2 * delta
-		var staff_pos = get_global_pos() + staff_base_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
+		var staff_offset = Vector2(staff_base_offset.x * side, staff_base_offset.y)
+		var staff_pos = get_global_pos() + staff_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
 	elif state == STAFF_ANIM:
-		var delta = staff.get_global_pos() - staff_target
-		if delta.length() < 5:
+		var vdelta = staff.get_global_pos() - staff_target
+		if vdelta.length() < delta * STAFF_SPEED:
 			start_jump()
 			return
-		var new_pos = staff.get_global_pos() + delta.normalized() * -STAFF_SPEED
+		var new_pos = staff.get_global_pos() + vdelta.normalized() * -STAFF_SPEED * delta
 		staff.set_global_pos(new_pos)
 	elif state == JUMPING:
 		jump_progress += delta * JUMP_SPEED
 		var jump_length = (jump_target - jump_start).length()
 		if jump_progress > jump_length:
-			state = WAITING
+			start_waiting()
 			return
 		
-		var staff_target_pos = jump_target + staff_base_offset + Vector2(staff_circle_radius, 0)
+		var staff_target_pos = jump_target + Vector2(staff_circle_radius + staff_base_offset.x * side, staff_base_offset.y)
 		staff.set_global_pos(jump_staff_start.linear_interpolate(staff_target_pos, jump_progress / jump_length))
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 
@@ -65,15 +74,16 @@ func start_jump():
 	jump_progress = 0
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
-	var me_delta = Vector2(-20, -120)
+	var me_delta = Vector2(-100, -450)
 	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
 	jump_target = platform_pos + Vector2(platform_width, 0) + me_delta
 	state = JUMPING
 	
 func do_action():
 	print(get_pos())
-	print("do action")
-	target_platform = find_platform_at(staff.get_global_pos())
+	var STAFF_HEIGHT = 800
+	print("do action ", staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
+	target_platform = find_platform_at(staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
 	if target_platform != null:
 		print("target: ", target_platform.get_name())
 	if target_platform == null:
@@ -99,9 +109,10 @@ func find_platform_at(pos):
 		var bpos = platform.get_global_pos()
 		var rect = platform.get_item_rect()
 		var scale = platform.get_scale()
-		
 		if pos.x + X_TOLERANCE > bpos.x + rect.pos.x * scale.x and pos.x - X_TOLERANCE < bpos.x + rect.end.x * scale.x:
-			var y_dist = pos.y - rect.pos.y
+			var y_dist = pos.y - (bpos.y + rect.pos.y)
+			print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
+		
 			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
 				best_y_dist = y_dist
 				best_platform = platform

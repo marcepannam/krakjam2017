@@ -18,7 +18,8 @@ margin/bottom = 13044.0
 [node name="dziadek" parent="." instance=ExtResource( 1 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 326.554, 373.556 )
+transform/pos = Vector2( 2448.68, -101.205 )
+z/z = 10
 script/script = ExtResource( 2 )
 
 [node name="platform2" type="Sprite" parent="." groups=[ "platform" ]]
@@ -29,6 +30,31 @@ texture = ExtResource( 3 )
 [node name="platform3" type="Sprite" parent="." groups=[ "platform" ]]
 
 transform/pos = Vector2( 1120.16, 758.844 )
+texture = ExtResource( 3 )
+
+[node name="platform4" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1818, 598.683 )
+texture = ExtResource( 3 )
+
+[node name="platform5" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 2527.28, 409.923 )
+texture = ExtResource( 3 )
+
+[node name="platform6" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1823.72, 186.843 )
+texture = ExtResource( 3 )
+
+[node name="platform7" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1131.6, 26.682 )
+texture = ExtResource( 3 )
+
+[node name="platform8" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 387.997, -116.318 )
 texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
