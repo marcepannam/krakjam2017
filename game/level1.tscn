@@ -78,9 +78,9 @@ texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-transform/pos = Vector2( 846.978, 557.89 )
+transform/pos = Vector2( 2135.53, -183.073 )
 transform/rot = 180.0
-transform/scale = Vector2( 7.10972, -6.93285 )
+transform/scale = Vector2( 68.3954, -40.9621 )
 anchor_mode = 1
 rotating = true
 current = true
