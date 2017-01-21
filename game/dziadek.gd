@@ -1,6 +1,5 @@
 extends Node2D
 
-const Y_TOLERANCE = 10
 const X_TOLERANCE = 10
 
 var staff_base_offset
@@ -70,7 +69,7 @@ func get_next_platform():
 	var i = 0
 	for t in ordered:
 		var platform = t[1]
-		print(t[0], " ", platform.get_name(), " ", platform.get_pos())
+		#print(t[0], " ", platform.get_name(), " ", platform.get_pos())
 		if platform == target_platform: myIndex = i
 		i += 1
 	
@@ -235,9 +234,11 @@ func find_platform_at(pos):
 		var scale = platform.get_scale()
 		if pos.x + X_TOLERANCE > bpos.x + rect.pos.x * scale.x and pos.x - X_TOLERANCE < bpos.x + rect.end.x * scale.x:
 			var y_dist = pos.y - (bpos.y + rect.pos.y * scale.y)
-			print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
-		
-			if y_dist > Y_TOLERANCE and y_dist < best_y_dist and y_dist < 900:
+			y_dist = 540 - y_dist
+			#print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
+			# wysoko: 123, nisko: 380, bardzo: 535
+			if y_dist > 0 and y_dist < best_y_dist and y_dist < 500:
 				best_y_dist = y_dist
 				best_platform = platform
+	print("BEST: ",best_y_dist)
 	return best_platform
