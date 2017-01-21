@@ -11,7 +11,6 @@ var staff_target
 
 var target_platform
 
-var staff_speed = 1000
 var jump_speed = 3500
 
 const WAITING = 0
@@ -134,7 +133,7 @@ func _process(delta):
 	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
 	if side == -1: staff_vec.x = -staff.get_item_rect().size.x + 7
 	staff_end += staff_vec.rotated(staff.get_rot() * side)
-	update()
+	# update()
 	
 	if state == AIMING:
 		if not animation_player.is_playing():
@@ -146,6 +145,7 @@ func _process(delta):
 	elif state == WAITING:
 		staff.set_global_pos(get_global_pos() + staff_offset)
 	elif state == STAFF_ANIM:
+		var staff_speed = 800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
 			if not is_space_pressed:
@@ -177,6 +177,9 @@ func _process(delta):
 		var staff_pos = staff.get_pos()
 		staff_pos.y += 40 * delta;
 		staff.set_pos(staff_pos)
+		
+		if not animation_player.is_playing():
+			animation_player.play("falling")
 
 var falling_speed = -20
 
@@ -185,14 +188,17 @@ var jump_start
 var jump_progress
 var jump_staff_start
 
+func get_platform_target(platform):
+	var me_delta = Vector2(120, -530)
+	var platform_width = platform.get_item_rect().size.width / 2
+	var platform_pos = platform.get_global_pos() + platform.get_item_rect().pos
+	return platform_pos + Vector2(platform_width / 2, 0) + me_delta
+	
 func start_jump():
-	var platform_width = target_platform.get_item_rect().size.width / 2
-	var me_delta = Vector2(120, -450)
 	jump_progress = 0
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
-	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
-	jump_target = platform_pos + Vector2(platform_width / 2, 0) + me_delta
+	jump_target = get_platform_target(target_platform)
 	state = JUMPING
 	
 func do_action():
@@ -218,6 +224,7 @@ func do_action():
 func die():
 	print("die :( at ", get_global_pos())
 	state = DEATH
+	animation_player.play("slipping")
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
