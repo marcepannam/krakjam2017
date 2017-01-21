@@ -31,8 +31,9 @@ func _process(delta):
 				lights_on()
 
 func blink():
-	blink_timer = 100
-	lights_off()
+	if(blink_timer < 0):
+		blink_timer = 100
+		lights_off()
 	
 	
 
