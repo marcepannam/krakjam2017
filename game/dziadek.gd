@@ -31,6 +31,7 @@ var body
 var camera
 var background
 var is_space_pressed = false
+var menu_scene = preload("res://menu.tscn")
 
 func _ready():
 	set_process(true)
@@ -62,7 +63,7 @@ func check_side():
 	var ok = false
 	for platform in platforms:
 		var this_pos = platform.get_pos() + platform.get_item_rect().pos
-		if this_pos.y < current_pos.y:
+		if this_pos.y < current_pos.y and current_pos.y - this_pos.y < 700:
 			if side == 1 and this_pos.x > current_pos.x: ok = true
 			if side == -1 and this_pos.x < current_pos.x: ok = true
 		
@@ -83,7 +84,7 @@ func _process(delta):
 	
 	var player_y = -get_global_pos().y
 	
-	var steps = [[-3000, 0], [-300, 0], [0, 10], [700, 30], [100000, 30]]
+	var steps = [[-3000, 0], [-300, 0], [0, 10], [700, 20], [1500, 30], [100000, 30]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
 		
@@ -125,7 +126,7 @@ func _process(delta):
 		var pos = get_global_pos()	
 		if pos.y > 2900:
 			print("go to menu")
-			get_tree().change_scene("res://menu.tscn")
+			get_tree().change_scene_to(menu_scene)
 			return
 		pos.y += falling_speed
 		pos.x += side * 20
