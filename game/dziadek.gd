@@ -88,10 +88,17 @@ func check_side():
 	if target_platform == null: return
 	
 	var next_platform = get_next_platform()
+	if next_platform == null:
+		win()
+		return
+	
 	if next_platform.get_pos().x > target_platform.get_pos().x:
 		side = 1
 	else:
 		side = -1
+
+func win():
+	pass
 
 func arr_interpolate(arr, v):
 	#print(arr, v)

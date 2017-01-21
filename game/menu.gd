@@ -21,14 +21,13 @@ func _input(event):
 		get_node("background").blink()
 
 func _process(delta):
-	if(not zooming):
-		if(get_node("background").start_zoom):
+	if not zooming:
+		if get_node("background").start_zoom:
 			start_animation()
-	elif(not get_node("AnimationPlayer").is_playing()):
-		if(countdown > 0):
+	else:
+		countdown += delta
+		if countdown > 1.5:
 			get_tree().change_scene_to(scene);
-		else:
-			countdown += delta
 
 func start_animation():
 	get_node("AnimationPlayer").play("zoom")
