@@ -11,7 +11,7 @@ var staff_target
 
 var target_platform
 
-var staff_speed = 1000
+var staff_speed = 800
 var jump_speed = 3500
 
 const WAITING = 0
@@ -134,7 +134,7 @@ func _process(delta):
 	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
 	if side == -1: staff_vec.x = -staff.get_item_rect().size.x + 7
 	staff_end += staff_vec.rotated(staff.get_rot() * side)
-	update()
+	# update()
 	
 	if state == AIMING:
 		if not animation_player.is_playing():
@@ -177,6 +177,9 @@ func _process(delta):
 		var staff_pos = staff.get_pos()
 		staff_pos.y += 40 * delta;
 		staff.set_pos(staff_pos)
+		
+		if not animation_player.is_playing():
+			animation_player.play("falling")
 
 var falling_speed = -20
 
@@ -218,6 +221,7 @@ func do_action():
 func die():
 	print("die :( at ", get_global_pos())
 	state = DEATH
+	animation_player.play("slipping")
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
