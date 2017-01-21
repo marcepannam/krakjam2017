@@ -11,7 +11,10 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	game_time = 1
-	var d = (game_time / period) * 2 - 1
+	game_time += delta
+	var d = (game_time / period) 
+	d = fmod(d, 2)
+	if d > 1: d = 2 - d
+	d = d * 2 - 1
 	var pos = Vector2(base_pos.x + (distance * get_item_rect().size.x) * d, base_pos.y)
 	set_global_pos(pos)

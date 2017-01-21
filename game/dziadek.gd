@@ -139,6 +139,8 @@ func _process(delta):
 		if not animation_player.is_playing():
 			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])
 
+		if target_platform != null:
+			set_global_pos(get_platform_target(target_platform))
 		staff_angle -= staff_rps * 3.1415 * 2 * delta * side
 		var staff_pos = get_global_pos() + staff_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
