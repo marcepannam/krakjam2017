@@ -21,15 +21,19 @@ const JUMPING = 2
 
 var state = WAITING
 var hero_width = 341
+var animation_player
 
 func _ready():
 	set_process(true)
 	set_process_input(true)
 	staff = get_node("body/Node2D/arm_staff/staff")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
+	animation_player = get_node("AnimationPlayer")
 	
 func _process(delta):
 	if state == WAITING:
+		if not animation_player.is_playing():
+			animation_player.play("stand")
 		staff_angle -= staff_rps * 3.1415 * 2 * delta
 		var staff_pos = get_global_pos() + staff_base_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
@@ -66,6 +70,7 @@ func start_jump():
 	state = JUMPING
 	
 func do_action():
+	print(get_pos())
 	print("do action")
 	target_platform = find_platform_at(staff.get_global_pos())
 	print("target: ", target_platform)
