@@ -17,10 +17,17 @@ margin/bottom = 13044.0
 
 [node name="dziadek" parent="." instance=ExtResource( 1 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 311.482, 384.052 )
 z/z = 10
 script/script = ExtResource( 2 )
+
+[node name="shoulder_staff" parent="dziadek"]
+
+editor/display_folded = true
+
+[node name="body" parent="dziadek/hip"]
+
+editor/display_folded = true
 
 [node name="platform2" type="Sprite" parent="." groups=[ "platform" ]]
 
@@ -60,9 +67,10 @@ texture = ExtResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 846.978, 557.89 )
+transform/rot = 180.0
 transform/scale = Vector2( 7.10972, -6.93285 )
 anchor_mode = 1
-rotating = false
+rotating = true
 current = true
 zoom = Vector2( 5, 5 )
 limit/left = -10000000

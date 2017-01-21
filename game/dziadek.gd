@@ -14,15 +14,18 @@ var target_platform
 
 var STAFF_SPEED = 1000
 var JUMP_SPEED = 3500
+var ROTATION_PERIOD = 3
 
 const WAITING = 0
 const STAFF_ANIM = 1
 const JUMPING = 2
 
+var gameTime = 0
 var state = WAITING
 var hero_width = 341
 var animation_player
 var side = 1
+var body
 var camera
 
 func _ready():
@@ -30,6 +33,7 @@ func _ready():
 	set_process_input(true)
 	camera = get_node("/root/Control/Camera2D")
 	staff = get_node("shoulder_staff/arm_staff/staff")
+	body = get_node("hip/body")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
 	start_waiting()
@@ -57,6 +61,10 @@ func check_side():
 
 func _process(delta):
 	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
+	gameTime += delta 
+	var rot = sin(gameTime / ROTATION_PERIOD * 3.1415 * 2) * 20
+	camera.set_rotd(rot + 180)
+	body.set_rotd(rot)
 	if state == WAITING:
 		if not animation_player.is_playing():
 			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])
