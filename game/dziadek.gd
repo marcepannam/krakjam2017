@@ -116,9 +116,9 @@ func start_jump():
 	jump_progress = 0
 	jump_start = get_global_pos()
 	jump_staff_start = staff.get_global_pos()
-	var me_delta = Vector2(-100, -450)
+	var me_delta = Vector2(120, -450)
 	var platform_pos = target_platform.get_global_pos() + target_platform.get_item_rect().pos
-	jump_target = platform_pos + Vector2(platform_width, 0) + me_delta
+	jump_target = platform_pos + Vector2(platform_width / 2, 0) + me_delta
 	state = JUMPING
 	
 func do_action():
@@ -161,7 +161,7 @@ func find_platform_at(pos):
 			var y_dist = pos.y - (bpos.y + rect.pos.y * scale.y)
 			print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
 		
-			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
+			if y_dist > Y_TOLERANCE and y_dist < best_y_dist and y_dist < 900:
 				best_y_dist = y_dist
 				best_platform = platform
 	return best_platform
