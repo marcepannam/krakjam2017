@@ -20,8 +20,8 @@ margin/bottom = 12024.0
 [node name="dziadek" parent="." instance=ExtResource( 1 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 306.32, 316.942 )
-transform/scale = Vector2( 1.2, 1.2 )
+transform/pos = Vector2( 321.807, 208.533 )
+transform/scale = Vector2( 1.4, 1.4 )
 z/z = 10
 script/script = ExtResource( 2 )
 
