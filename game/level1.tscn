@@ -76,9 +76,39 @@ texture = ExtResource( 3 )
 transform/pos = Vector2( 1872.8, -731.683 )
 texture = ExtResource( 3 )
 
+[node name="platform11" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1229.67, -953.98 )
+texture = ExtResource( 3 )
+
+[node name="platform12" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 552.193, -1165.69 )
+texture = ExtResource( 3 )
+
+[node name="platform13" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1240.25, -1324.47 )
+texture = ExtResource( 3 )
+
+[node name="platform14" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 1917.73, -1493.84 )
+texture = ExtResource( 3 )
+
+[node name="platform15" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 2542.27, -1663.21 )
+texture = ExtResource( 3 )
+
+[node name="platform16" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 3230.33, -1811.41 )
+texture = ExtResource( 3 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
-transform/pos = Vector2( 2135.53, -183.073 )
+transform/pos = Vector2( 2085.32, -247.231 )
 transform/rot = 180.0
 transform/scale = Vector2( 68.3954, -40.9621 )
 anchor_mode = 1
@@ -97,6 +127,7 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+__meta__ = { "_edit_lock_":true }
 
 [node name="level_background" parent="." instance=ExtResource( 4 )]
 
