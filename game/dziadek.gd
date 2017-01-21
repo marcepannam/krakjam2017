@@ -31,6 +31,7 @@ var camera
 var background
 var is_space_pressed = false
 var menu_scene = preload("res://menu.tscn")
+var staff_end
 
 func _ready():
 	set_process(true)
@@ -107,13 +108,17 @@ func arr_interpolate(arr, v):
 			return (1-alpha) * arr[i][1] + alpha * arr[i+1][1]
 	return arr[0][1]
 
+func _draw():
+	if staff_end != null:
+		draw_rect(Rect2(staff_end.x * side, staff_end.y, 20, 20), Color(1, 0, 0))
+
 func _process(delta):
 	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
-	gameTime += delta 
+	gameTime += delta
 	
 	var player_y = -get_global_pos().y
 	
-	var steps = [[-3000, 0], [-300, 0], [0, 10], [700, 20], [1500, 30], [100000, 30]]
+	var steps = [[-3000, 0], [-300, 0], [0, 10], [2000, 20], [10000, 30], [25000, 40], [1000000, 40]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
 		
@@ -123,6 +128,14 @@ func _process(delta):
 	body.set_rotd(rot)
 	
 	var staff_offset = Vector2(staff_base_offset.x * side, staff_base_offset.y).rotated(body.get_rot())
+	
+	staff.set_rotd(rot)
+	
+	staff_end = staff.get_global_pos() - get_global_pos()
+	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
+	if side == -1: staff_vec.x = -staff.get_item_rect().size.x + 7
+	staff_end += staff_vec.rotated(staff.get_rot() * side)
+	update()
 	
 	if state == AIMING:
 		if not animation_player.is_playing():
@@ -171,7 +184,7 @@ var jump_target
 var jump_start
 var jump_progress
 var jump_staff_start
-	
+
 func start_jump():
 	var platform_width = target_platform.get_item_rect().size.width / 2
 	var me_delta = Vector2(120, -450)
@@ -186,7 +199,7 @@ func do_action():
 	var STAFF_HEIGHT = 800
 	print("do action ", staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
 	var current_platform = target_platform
-	target_platform = find_platform_at(staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
+	target_platform = find_platform_at(get_global_pos() + staff_end)
 	
 	if target_platform == null:
 		die()
@@ -232,12 +245,9 @@ func find_platform_at(pos):
 		var bpos = platform.get_global_pos()
 		var rect = platform.get_item_rect()
 		var scale = platform.get_scale()
-		if pos.x + X_TOLERANCE > bpos.x + rect.pos.x * scale.x and pos.x - X_TOLERANCE < bpos.x + rect.end.x * scale.x:
-			var y_dist = pos.y - (bpos.y + rect.pos.y * scale.y)
-			y_dist = 540 - y_dist
-			#print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
-			# wysoko: 123, nisko: 380, bardzo: 535
-			if y_dist > 0 and y_dist < best_y_dist and y_dist < 500:
+		if pos.x > bpos.x + rect.pos.x * scale.x and pos.x < bpos.x + rect.end.x * scale.x:
+			var y_dist = (bpos.y + rect.pos.y * scale.y) - pos.y
+			if y_dist > -110 and y_dist < best_y_dist and y_dist < 500:
 				best_y_dist = y_dist
 				best_platform = platform
 	print("BEST: ",best_y_dist)
