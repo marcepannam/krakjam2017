@@ -125,9 +125,13 @@ func _process(delta):
 	camera.set_rotd(rot + 180)
 	body.set_rotd(rot)
 	
+	
 	var staff_offset = Vector2(staff_base_offset.x * side, staff_base_offset.y).rotated(body.get_rot())
 	
 	staff.set_rotd(rot)
+	var danglings = get_tree().get_nodes_in_group("danglings")
+	for d in danglings:
+		d.set_rotd(rot)
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
 	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
@@ -166,6 +170,8 @@ func _process(delta):
 		staff.set_global_pos(jump_staff_start.linear_interpolate(staff_target_pos, jump_progress / jump_length))
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 	elif state == DEATH:
+		if(pos.y > 2500 and not get_node("../Camera2D/blackout_animation").is_playing()):
+			get_node("../Camera2D/blackout_animation").play("blackout")
 		falling_speed += delta * 50
 		var pos = get_global_pos()	
 		if pos.y > 2900:
@@ -261,3 +267,4 @@ func find_platform_at(pos):
 				best_platform = platform
 	print("BEST: ",best_y_dist)
 	return best_platform
+	
