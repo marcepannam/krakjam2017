@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://sprites/steps/basic_step.png" type="Texture" id=1]
-[ext_resource path="res://dziadek.tscn" type="PackedScene" id=2]
-[ext_resource path="res://dziadek.gd" type="Script" id=3]
+[ext_resource path="res://dziadek.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dziadek.gd" type="Script" id=2]
+[ext_resource path="res://sprites/steps/basic_step.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 
@@ -10,52 +10,73 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -16.0
-margin/top = 37.0
-margin/right = 60.0
-margin/bottom = 95.0
+margin/left = 5023.0
+margin/top = 3044.0
+margin/right = 15023.0
+margin/bottom = 13044.0
 
-[node name="platform1" type="Sprite" parent="." groups=[ "platform" ]]
+[node name="dziadek" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 456.719, 438.025 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+editor/display_folded = true
+transform/pos = Vector2( 311.482, 384.052 )
+z/z = 10
+script/script = ExtResource( 2 )
 
 [node name="platform2" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 310.309, 478.512 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 362.896, 894.842 )
+texture = ExtResource( 3 )
 
 [node name="platform3" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 601.44, 433.096 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 1120.16, 758.844 )
+texture = ExtResource( 3 )
 
 [node name="platform4" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 734.757, 407.249 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 1818, 598.683 )
+texture = ExtResource( 3 )
 
 [node name="platform5" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 862.632, 370.519 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 2527.28, 409.923 )
+texture = ExtResource( 3 )
 
 [node name="platform6" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 987.79, 339.23 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 1823.72, 186.843 )
+texture = ExtResource( 3 )
 
-[node name="dziadek" parent="." instance=ExtResource( 2 )]
+[node name="platform7" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 326.554, 373.556 )
-transform/scale = Vector2( 0.2, 0.2 )
-script/script = ExtResource( 3 )
+transform/pos = Vector2( 1131.6, 26.682 )
+texture = ExtResource( 3 )
+
+[node name="platform8" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 387.997, -116.318 )
+texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 846.978, 557.89 )
+transform/scale = Vector2( 7.10972, -6.93285 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 5, 5 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 
 [editable path="dziadek"]
