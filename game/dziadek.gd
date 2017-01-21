@@ -30,8 +30,6 @@ var root
 var body
 var camera
 var background
-var rotationPeriod = 3
-var rotationAmplitude = 10
 var is_space_pressed = false
 
 func _ready():
@@ -47,6 +45,7 @@ func _ready():
 	start_waiting()
 	
 func start_waiting():
+	print("ready ", get_global_pos())
 	if is_space_pressed:
 		state = AIMING
 	else:
@@ -70,10 +69,25 @@ func check_side():
 	if not ok:
 		side *= -1
 
+func arr_interpolate(arr, v):
+	#print(arr, v)
+	for i in range(arr.size() - 1):
+		if v >= arr[i][0] && v < arr[i+1][0]:
+			var alpha = (v - arr[i][0]) / float(arr[i+1][0] - arr[i][0])
+			return (1-alpha) * arr[i][1] + alpha * arr[i+1][1]
+	return arr[0][1]
+
 func _process(delta):
 	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
 	gameTime += delta 
-	var rot = sin(gameTime / rotationPeriod * 3.1415 * 2) * rotationAmplitude
+	
+	var player_y = -get_global_pos().y
+	
+	var steps = [[-3000, 0], [-300, 0], [0, 10], [700, 30], [100000, 30]]
+	var rotation_amplitude = arr_interpolate(steps, player_y)
+	var rotation_period = 3
+		
+	var rot = sin(gameTime / rotation_period * 3.1415 * 2) * rotation_amplitude
 	var bgsize = background.get_item_rect().end
 	camera.set_rotd(rot + 180)
 	body.set_rotd(rot)
@@ -108,7 +122,7 @@ func _process(delta):
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 	elif state == DEATH:
 		falling_speed += delta * 50
-		var pos = get_global_pos()
+		var pos = get_global_pos()	
 		if pos.y > 2900:
 			print("go to menu")
 			get_tree().change_scene("res://menu.tscn")
@@ -116,6 +130,10 @@ func _process(delta):
 		pos.y += falling_speed
 		pos.x += side * 20
 		set_global_pos(pos)
+		
+		var staff_pos = staff.get_pos()
+		staff_pos.y += 40 * delta;
+		staff.set_pos(staff_pos)
 
 var falling_speed = -20
 
