@@ -22,7 +22,7 @@ const JUMPING = 2
 var state = WAITING
 var hero_width = 341
 var animation_player
-var side = -1
+var side = 1
 
 func _ready():
 	set_process(true)
@@ -34,8 +34,24 @@ func _ready():
 	
 func start_waiting():
 	state = WAITING
+	# Should we rotate? Count platforms on the right and above.
+	check_side()
 	set_scale(Vector2(side, 1))
 	staff.set_scale(Vector2(side, 1))
+
+func check_side():
+	if target_platform == null: return
+	var platforms = get_node("/root").get_tree().get_nodes_in_group("platform")
+	var current_pos = target_platform.get_pos() + target_platform.get_item_rect().pos
+	var ok = false
+	for platform in platforms:
+		var this_pos = platform.get_pos() + platform.get_item_rect().pos
+		if this_pos.y < current_pos.y:
+			if side == 1 and this_pos.x > current_pos.x: ok = true
+			if side == -1 and this_pos.x < current_pos.x: ok = true
+		
+	if not ok:
+		side *= -1
 
 func _process(delta):
 	if state == WAITING:
@@ -110,7 +126,7 @@ func find_platform_at(pos):
 		var rect = platform.get_item_rect()
 		var scale = platform.get_scale()
 		if pos.x + X_TOLERANCE > bpos.x + rect.pos.x * scale.x and pos.x - X_TOLERANCE < bpos.x + rect.end.x * scale.x:
-			var y_dist = pos.y - (bpos.y + rect.pos.y)
+			var y_dist = pos.y - (bpos.y + rect.pos.y * scale.y)
 			print(bpos.y, " ", rect.pos.y, " ", platform.get_name(), " ", y_dist)
 		
 			if y_dist > Y_TOLERANCE and y_dist < best_y_dist:
