@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://background.gd" type="Script" id=1]
-[ext_resource path="res://sprites/world/ligth_on_0.tex" type="Texture" id=2]
-[ext_resource path="res://sprites/world/ligth_on_1.tex" type="Texture" id=3]
-[ext_resource path="res://sprites/world/ligth_on_2.tex" type="Texture" id=4]
-[ext_resource path="res://sprites/world/ligth_on_3.tex" type="Texture" id=5]
-[ext_resource path="res://sprites/world/ligth_on_4.tex" type="Texture" id=6]
+[ext_resource path="res://sprites/world/ligth_on_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/world/ligth_on_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/world/ligth_on_2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/world/ligth_on_3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/world/ligth_on_4.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -67,7 +67,6 @@ texture = ExtResource( 4 )
 [node name="background_5" type="Sprite" parent="."]
 
 transform/pos = Vector2( 94.6729, -18.4082 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="background_3" type="Sprite" parent="."]

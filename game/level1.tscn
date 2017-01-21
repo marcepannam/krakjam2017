@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://dziadek.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dziadek.gd" type="Script" id=2]
 [ext_resource path="res://sprites/steps/basic_step.png" type="Texture" id=3]
+[ext_resource path="res://level_background.tscn" type="PackedScene" id=4]
 
 [node name="Control" type="Control"]
 
@@ -10,13 +11,14 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 5023.0
-margin/top = 3044.0
-margin/right = 15023.0
-margin/bottom = 13044.0
+margin/left = 4514.0
+margin/top = 2024.0
+margin/right = 14514.0
+margin/bottom = 12024.0
 
 [node name="dziadek" parent="." instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 311.482, 384.052 )
 z/z = 10
 script/script = ExtResource( 2 )
@@ -46,22 +48,32 @@ texture = ExtResource( 3 )
 
 [node name="platform5" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 2527.28, 409.923 )
+transform/pos = Vector2( 2556.08, 424.323 )
+texture = ExtResource( 3 )
+
+[node name="platform9" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 3247.3, 208.319 )
+texture = ExtResource( 3 )
+
+[node name="platform10" type="Sprite" parent="." groups=[ "platform" ]]
+
+transform/pos = Vector2( 3989.85, -3.83823 )
 texture = ExtResource( 3 )
 
 [node name="platform6" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 1823.72, 186.843 )
+transform/pos = Vector2( 3250.93, -255.719 )
 texture = ExtResource( 3 )
 
 [node name="platform7" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 1131.6, 26.682 )
+transform/pos = Vector2( 2530, -473.481 )
 texture = ExtResource( 3 )
 
 [node name="platform8" type="Sprite" parent="." groups=[ "platform" ]]
 
-transform/pos = Vector2( 387.997, -116.318 )
+transform/pos = Vector2( 1872.8, -731.683 )
 texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -85,6 +97,12 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[node name="level_background" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -2205.04, -3837.15 )
+transform/scale = Vector2( 10.6118, 12.8331 )
+z/z = -10
 
 
 [editable path="dziadek"]

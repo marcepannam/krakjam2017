@@ -27,6 +27,7 @@ var animation_player
 var side = 1
 var body
 var camera
+var background
 
 func _ready():
 	set_process(true)
@@ -36,6 +37,7 @@ func _ready():
 	body = get_node("hip/body")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
+	background = get_node("/root/Control/level_background/background")
 	start_waiting()
 	
 func start_waiting():
@@ -62,9 +64,16 @@ func check_side():
 func _process(delta):
 	camera.set_global_pos(Vector2(camera.get_global_pos().x, get_global_pos().y))
 	gameTime += delta 
-	var rot = sin(gameTime / ROTATION_PERIOD * 3.1415 * 2) * 20
-	camera.set_rotd(rot + 180)
-	body.set_rotd(rot)
+	var rot = sin(gameTime / ROTATION_PERIOD * 3.1415 * 2) * 10
+	var bgscale = 11
+	var bgsize = background.get_item_rect().end
+	#camera.set_rotd(rot + 180)
+	body.set_rotd(rot) # .rotated(body.get_rot())
+	#print(-bgsize.y/2)
+	var bgmatrix = Matrix32(0, Vector2(0, 0)).scaled(Vector2(bgscale, bgscale)).translated(Vector2(0, 0))
+	bgmatrix = bgmatrix.rotated(body.get_rot()).translated(Vector2(500, 500))
+	background.set_global_transform(bgmatrix)
+	
 	if state == WAITING:
 		if not animation_player.is_playing():
 			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])

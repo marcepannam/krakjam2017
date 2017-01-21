@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=1]
 
-[ext_resource path="res://sprites/dziadek/arm_staff.tex" type="Texture" id=1]
-[ext_resource path="res://sprites/dziadek/staff.tex" type="Texture" id=2]
-[ext_resource path="res://sprites/dziadek/body.tex" type="Texture" id=3]
-[ext_resource path="res://sprites/dziadek/head.tex" type="Texture" id=4]
+[ext_resource path="res://sprites/dziadek/arm_staff.png" type="Texture" id=1]
+[ext_resource path="res://sprites/dziadek/staff.png" type="Texture" id=2]
+[ext_resource path="res://sprites/dziadek/body.png" type="Texture" id=3]
+[ext_resource path="res://sprites/dziadek/head.png" type="Texture" id=4]
 [ext_resource path="res://sprites/dziadek/mustache_r.png" type="Texture" id=5]
 [ext_resource path="res://sprites/dziadek/mustache_l.png" type="Texture" id=6]
-[ext_resource path="res://sprites/dziadek/arm_lamp.tex" type="Texture" id=7]
-[ext_resource path="res://sprites/dziadek/lamp.tex" type="Texture" id=8]
-[ext_resource path="res://sprites/dziadek/legs.tex" type="Texture" id=9]
-[ext_resource path="res://sprites/dziadek/feet.tex" type="Texture" id=10]
+[ext_resource path="res://sprites/dziadek/arm_lamp.png" type="Texture" id=7]
+[ext_resource path="res://sprites/dziadek/lamp.png" type="Texture" id=8]
+[ext_resource path="res://sprites/dziadek/legs.png" type="Texture" id=9]
+[ext_resource path="res://sprites/dziadek/feet.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 
