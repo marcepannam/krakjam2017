@@ -1,10 +1,25 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://sprites/world/level_foreground.tex" type="Texture" id=1]
-[ext_resource path="res://sprites/world/level_background.tex" type="Texture" id=2]
-[ext_resource path="res://sprites/world/level_cloud01.tex" type="Texture" id=3]
-[ext_resource path="res://sprites/world/level_cloud02.tex" type="Texture" id=4]
-[ext_resource path="res://sprites/world/vignette.tex" type="Texture" id=5]
+[ext_resource path="res://sprites/world/schemat.tex" type="Texture" id=2]
+[ext_resource path="res://sprites/dangling_objs/level_deco06.tex" type="Texture" id=3]
+[ext_resource path="res://sprites/dangling_objs/level_deco05.tex" type="Texture" id=4]
+[ext_resource path="res://sprites/dangling_objs/level_deco04.tex" type="Texture" id=5]
+[ext_resource path="res://sprites/dangling_objs/level_deco03.tex" type="Texture" id=6]
+[ext_resource path="res://sprites/dangling_objs/level_deco01.tex" type="Texture" id=7]
+[ext_resource path="res://sprites/dangling_objs/level_deco02.tex" type="Texture" id=8]
+[ext_resource path="res://sprites/dangling_objs/level_plant.tex" type="Texture" id=9]
+[ext_resource path="res://sprites/dangling_objs/level_lamp.tex" type="Texture" id=10]
+[ext_resource path="res://sprites/dangling_objs/level_cloths02.png" type="Texture" id=11]
+[ext_resource path="res://sprites/dangling_objs/level_cloths01.png" type="Texture" id=12]
+[ext_resource path="res://sprites/dangling_objs/level_cloths03.tex" type="Texture" id=13]
+[ext_resource path="res://sprites/dangling_objs/level_cloths04.tex" type="Texture" id=14]
+[ext_resource path="res://sprites/dangling_objs/level_cloths05.tex" type="Texture" id=15]
+[ext_resource path="res://sprites/world/level_background.tex" type="Texture" id=16]
+[ext_resource path="res://sprites/world/level_cloud01.tex" type="Texture" id=17]
+[ext_resource path="res://sprites/world/level_cloud02.tex" type="Texture" id=18]
+[ext_resource path="res://sprites/world/level_background_1.tex" type="Texture" id=19]
+[ext_resource path="res://sprites/world/vignette.tex" type="Texture" id=20]
 
 [sub_resource type="Animation" id=1]
 
@@ -36,6 +51,150 @@ transform/pos = Vector2( 400, -800 )
 transform/scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 1 )
 
+[node name="schemat" type="Sprite" parent="foreground"]
+
+visibility/visible = false
+texture = ExtResource( 2 )
+
+[node name="obrazek" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -202.38, 1560.16 )
+texture = ExtResource( 3 )
+offset = Vector2( 3.68165, 78.813 )
+
+[node name="obrazek1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -107.923, 177.094 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( 2.08941, 40.4471 )
+
+[node name="obrazek2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -111.198, -646.155 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+offset = Vector2( -0.763441, 44.3652 )
+
+[node name="obrazek3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -98.4107, -1209.52 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+offset = Vector2( 1.43428, 40.311 )
+
+[node name="obrazek4" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -83.4853, -1333.69 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+offset = Vector2( 1.43428, 40.311 )
+
+[node name="kotwica" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 129.21, -1321.85 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+offset = Vector2( -0.301623, 48.9364 )
+
+[node name="kwiatek" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -51.7636, -903.477 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+offset = Vector2( 2.14101, 30.7301 )
+
+[node name="kwiatek1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 87.0496, -178.679 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+offset = Vector2( 0.0758841, 30.3702 )
+
+[node name="kwiatek2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -69.2944, 460.906 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+offset = Vector2( 6.39079, 30.4271 )
+
+[node name="kwiatek3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 96.849, 1058.26 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+offset = Vector2( 1.95021, 26.1925 )
+
+[node name="lampka" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 197.72, 1473.93 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( 3.09658, 46.0636 )
+
+[node name="lampka1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -113.873, 901.906 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( 3.09658, 46.0636 )
+
+[node name="lampka2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 123.404, 310.789 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( 3.09658, 46.0636 )
+
+[node name="lampka3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -96.3819, -353.516 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( 3.09658, 46.0636 )
+
+[node name="lampka4" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 96.107, -1033.83 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( 3.09658, 46.0636 )
+
+[node name="gacie" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 55.1326, -461.648 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 11 )
+offset = Vector2( 11.2, 57.524 )
+
+[node name="gacie1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 122.948, -492.758 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 12 )
+offset = Vector2( 18.4502, 34.1218 )
+
+[node name="gacie2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -160.037, -422.091 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 13 )
+offset = Vector2( 26.4164, 18.2975 )
+
+[node name="gacie3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( -131.237, -109.877 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 14 )
+offset = Vector2( 9.32203, 42.0669 )
+
+[node name="gacie4" type="Sprite" parent="foreground" groups=[ "danglings" ]]
+
+transform/pos = Vector2( 131.129, 31.1715 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 15 )
+offset = Vector2( -28.9236, 46.6246 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 layer = -1
@@ -47,31 +206,37 @@ scale = Vector2( 1, 1 )
 
 transform/pos = Vector2( 400, -800 )
 transform/scale = Vector2( 0.67, 0.67 )
-texture = ExtResource( 2 )
+texture = ExtResource( 16 )
 
 [node name="cloud1" type="Sprite" parent="CanvasLayer"]
 
 transform/pos = Vector2( 1876.24, -446.522 )
 transform/scale = Vector2( 0.67, 0.67 )
-texture = ExtResource( 3 )
+texture = ExtResource( 17 )
 
 [node name="cloud2" type="Sprite" parent="CanvasLayer"]
 
 transform/pos = Vector2( -572.09, -656.698 )
 transform/scale = Vector2( 0.67, 0.67 )
-texture = ExtResource( 4 )
+texture = ExtResource( 18 )
 
 [node name="cloud3" type="Sprite" parent="CanvasLayer"]
 
 transform/pos = Vector2( 561.727, -1906.84 )
 transform/scale = Vector2( 0.67, 0.67 )
-texture = ExtResource( 4 )
+texture = ExtResource( 18 )
+
+[node name="mountain" type="Sprite" parent="CanvasLayer"]
+
+transform/pos = Vector2( 400, -800 )
+transform/scale = Vector2( 0.67, 0.67 )
+texture = ExtResource( 19 )
 
 [node name="ViewportSprite" type="Sprite" parent="CanvasLayer"]
 
 transform/pos = Vector2( 400, 300 )
 transform/scale = Vector2( 0.67, 0.67 )
-texture = ExtResource( 5 )
+texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
