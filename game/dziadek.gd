@@ -198,7 +198,7 @@ func _process(delta):
 			dziadek_sounds.play_random_sound("sing")
 		else:
 			dziadek_sounds.play_random_sound("mumble")
-		var staff_speed = 850 #800 + player_y / 10
+		var staff_speed = 800 #800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
 			if not is_space_pressed:
@@ -237,7 +237,8 @@ func _process(delta):
 			get_tree().change_scene_to(menu_scene)
 			return
 		pos.y += falling_speed
-		pos.x += side * 20
+		if death_jump:
+			pos.x += side * 20
 		set_global_pos(pos)
 		
 		var staff_pos = staff.get_pos()
@@ -248,6 +249,7 @@ func _process(delta):
 			animation_player.play("falling")
 
 var falling_speed = -20
+var death_jump
 
 var jump_target
 var jump_start
@@ -293,7 +295,13 @@ func do_action():
 func die():
 	print("die :( at ", get_global_pos())
 	state = DEATH
+	death_jump = true
 	animation_player.play("slipping")
+
+func die_base():
+	state = DEATH
+	death_jump = false
+	falling_speed = 20
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
