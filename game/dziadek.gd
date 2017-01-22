@@ -154,6 +154,8 @@ func _process(delta):
 		staff_hand.set_opacity(0)
 		var zoom = 8 + 8 * min(time_from_win / 5, 1)
 		camera.set_zoom(Vector2(zoom, zoom))
+		if time_from_win > 5:
+			get_node("/root/Control/fire").set_opacity(min(time_from_win - 5, 1))
 	
 	rot_base = sin(gameTime / rotation_period * 3.1415 * 2)
 	var rot = rot_base * rotation_amplitude
