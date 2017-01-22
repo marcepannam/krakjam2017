@@ -38,6 +38,8 @@ var staff_begin
 var shoulder_ref
 var staff_ref
 var staff_hand
+var ordered
+var rot_base = 0
 
 signal platform_changed
 
@@ -57,6 +59,14 @@ func _ready():
 	staff_hand = get_node("shoulder_staff/arm_staff")
 	start_waiting()
 	
+	sort_platforms()
+	
+func sort_platforms():
+	ordered = []
+	for platform in get_node("/root").get_tree().get_nodes_in_group("platform"):
+		ordered.append([platform.get_pos().y, platform])
+	ordered.sort_custom(self, "cmp")
+	
 func start_waiting():
 	print("ready ", get_global_pos())
 	emit_signal("platform_changed", target_platform)
@@ -72,10 +82,6 @@ func cmp(a, b):
 
 func get_next_platform():
 	if target_platform == null: return
-	var ordered = []
-	for platform in get_node("/root").get_tree().get_nodes_in_group("platform"):
-		ordered.append([platform.get_pos().y, platform])
-	ordered.sort_custom(self, "cmp")
 	
 	var myIndex = null
 	var i = 0
@@ -138,8 +144,9 @@ func _process(delta):
 	var steps = [[-3000, 0], [-500, 0], [2500, 10], [4500, 20], [8500, 30], [15000, 40], [1000000, 40]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
-		
-	var rot = sin(gameTime / rotation_period * 3.1415 * 2) * rotation_amplitude
+	
+	rot_base = sin(gameTime / rotation_period * 3.1415 * 2)
+	var rot = rot_base * rotation_amplitude
 	var bgsize = background.get_item_rect().end
 	camera.set_rotd(rot + 180)
 	body.set_rotd(rot)
@@ -191,7 +198,7 @@ func _process(delta):
 			dziadek_sounds.play_random_sound("sing")
 		else:
 			dziadek_sounds.play_random_sound("mumble")
-		var staff_speed = 900 #+ player_y / 10
+		var staff_speed = 800 #800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
 			if not is_space_pressed:
@@ -230,7 +237,8 @@ func _process(delta):
 			get_tree().change_scene_to(menu_scene)
 			return
 		pos.y += falling_speed
-		pos.x += side * 20
+		if death_jump:
+			pos.x += side * 20
 		set_global_pos(pos)
 		
 		var staff_pos = staff.get_pos()
@@ -241,6 +249,7 @@ func _process(delta):
 			animation_player.play("falling")
 
 var falling_speed = -20
+var death_jump
 
 var jump_target
 var jump_start
@@ -286,11 +295,19 @@ func do_action():
 func die():
 	print("die :( at ", get_global_pos())
 	state = DEATH
+	death_jump = true
 	animation_player.play("slipping")
+
+func die_base():
+	state = DEATH
+	death_jump = false
+	falling_speed = 20
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
-		target_platform = get_next_platform()
+		var next_platform = get_next_platform()
+		if next_platform == null: return
+		target_platform = next_platform
 		staff_target = staff.get_global_pos()
 		state = STAFF_ANIM
 		return
