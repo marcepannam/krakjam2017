@@ -163,7 +163,7 @@ func _process(delta):
 	
 	var hand_delta = staff_ref.get_global_pos() - shoulder_ref.get_global_pos()
 	var rect = staff_hand.get_item_rect()
-	var rect_length = min(420, hand_delta.length())
+	var rect_length = min(450, hand_delta.length())
 	
 	rect = Rect2(rect.size.width - rect_length, 0, rect_length, rect.size.height)
 	#staff_hand.set_offset(Vector2(-94, -34))
