@@ -125,7 +125,7 @@ editor/display_folded = true
 
 config/polyphony = 2
 config/samples = SubResource( 1 )
-default/volume_db = 7.0
+default/volume_db = 9.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0
@@ -277,7 +277,7 @@ transform/pos = Vector2( 731.778, -7577.53 )
 
 [node name="platform60" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 3313.04, -8405.38 )
+transform/pos = Vector2( 3313.04, -8413.16 )
 
 [node name="platform63" parent="." instance=ExtResource( 37 )]
 
@@ -289,11 +289,11 @@ transform/pos = Vector2( 811.951, -9231.54 )
 
 [node name="platform65" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1444.96, -9529.96 )
+transform/pos = Vector2( 1452.74, -9506.62 )
 
 [node name="platform66" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2046.87, -9650.96 )
+transform/pos = Vector2( 2078, -9650.96 )
 
 [node name="platform67" parent="." instance=ExtResource( 37 )]
 
@@ -303,37 +303,21 @@ transform/pos = Vector2( 2717.69, -9787.44 )
 
 transform/pos = Vector2( 3272.34, -9996.16 )
 
-[node name="platform69" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2723.22, -10201.1 )
-
-[node name="platform70" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2094.26, -10441.9 )
-
 [node name="platform71" parent="." instance=ExtResource( 37 )]
 
 transform/pos = Vector2( 1437.69, -10636.3 )
 
-[node name="platform72" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 804.613, -10830.5 )
-
 [node name="platform73" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1493.07, -11050.8 )
+transform/pos = Vector2( 1433.74, -11246.6 )
 
 [node name="platform74" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2107.38, -11267.6 )
+transform/pos = Vector2( 2076.2, -11402.5 )
 
 [node name="platform75" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2718.36, -11464.2 )
-
-[node name="platform76" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 3229.07, -11690.5 )
+transform/pos = Vector2( 2683.87, -11541.8 )
 
 [node name="platform77" parent="." instance=ExtResource( 37 )]
 
@@ -349,31 +333,23 @@ transform/pos = Vector2( 1508.5, -12333.1 )
 
 [node name="platform80" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 889.927, -12565.4 )
+transform/pos = Vector2( 907.171, -12608.5 )
 
 [node name="platform81" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1435.21, -12818.2 )
-
-[node name="platform82" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2047.38, -13041.5 )
+transform/pos = Vector2( 1452.45, -12861.3 )
 
 [node name="platform83" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2678.65, -13276.2 )
+transform/pos = Vector2( 2610.84, -13426.3 )
 
 [node name="platform84" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 3187.35, -13453.5 )
-
-[node name="platform85" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2670.72, -13741.7 )
+transform/pos = Vector2( 3196.9, -13644.6 )
 
 [node name="platform86" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2037.59, -13879.9 )
+transform/pos = Vector2( 1999.38, -13879.9 )
 
 [node name="platform87" parent="." instance=ExtResource( 37 )]
 
@@ -385,83 +361,67 @@ transform/pos = Vector2( 924.672, -14369.9 )
 
 [node name="platform89" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1509.07, -14570.8 )
-
-[node name="platform90" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2121.23, -14795 )
+transform/pos = Vector2( 1461.3, -14609 )
 
 [node name="platform91" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2707.53, -15019.1 )
+transform/pos = Vector2( 2640.66, -14990.4 )
 
 [node name="platform92" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 3138.13, -15303.9 )
-
-[node name="platform93" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2615.58, -15543.8 )
+transform/pos = Vector2( 3157.24, -15237 )
 
 [node name="platform94" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2046.25, -15760.4 )
-
-[node name="platform95" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 1530.19, -15996.4 )
+transform/pos = Vector2( 2170.45, -15779.5 )
 
 [node name="platform96" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 938.81, -16232.4 )
+transform/pos = Vector2( 1137.73, -16294.9 )
 
 [node name="platform97" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1478.35, -16467 )
+transform/pos = Vector2( 1654.29, -16513.9 )
 
 [node name="platform98" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2053.08, -16689.8 )
+transform/pos = Vector2( 2205.56, -16666.3 )
 
 [node name="platform99" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2627.81, -16924.4 )
+transform/pos = Vector2( 2698.18, -16807.1 )
 
 [node name="platform100" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 3068.72, -17190.1 )
+transform/pos = Vector2( 3080.45, -17025.9 )
 
 [node name="platform101" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2625.66, -17464.8 )
-
-[node name="platform102" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 2021.36, -17660.4 )
+transform/pos = Vector2( 2578.74, -17241.9 )
 
 [node name="platform103" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1457.1, -17861.3 )
-
-[node name="platform104" parent="." instance=ExtResource( 37 )]
-
-transform/pos = Vector2( 974.197, -18209.4 )
+transform/pos = Vector2( 1461.92, -17588.4 )
 
 [node name="platform105" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 1484.97, -18556 )
+transform/pos = Vector2( 1376.08, -18377.2 )
 
 [node name="platform106" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2163.42, -18774.5 )
+transform/pos = Vector2( 1939.25, -18584.8 )
+
+[node name="platform109" parent="." instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 2320.54, -18849.4 )
 
 [node name="platform107" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 2716.26, -19040.7 )
+transform/pos = Vector2( 2723.28, -19047.7 )
 
 [node name="platform108" parent="." instance=ExtResource( 37 )]
 
-transform/pos = Vector2( 3166.26, -19231.9 )
+transform/pos = Vector2( 3013.4, -19319.8 )
 
 [node name="platform broken 1" parent="." instance=ExtResource( 38 )]
 
@@ -475,34 +435,45 @@ transform/pos = Vector2( 2349.75, -5428.56 )
 
 transform/pos = Vector2( 1752.97, -5589.15 )
 
+[node name="platform broken5" parent="." instance=ExtResource( 38 )]
+
+transform/pos = Vector2( 2056.13, -10567.4 )
+
 [node name="platform broken4" parent="." instance=ExtResource( 38 )]
 
 transform/pos = Vector2( 2157.6, -7985.81 )
 
+[node name="platform broken6" parent="." instance=ExtResource( 38 )]
+
+transform/pos = Vector2( 3236.68, -11727.4 )
+
+[node name="platform broken7" parent="." instance=ExtResource( 38 )]
+
+transform/pos = Vector2( 2615.71, -13791 )
+
 [node name="platform horizontal 1" parent="." instance=ExtResource( 39 )]
 
 transform/pos = Vector2( 1259.63, -1890.49 )
-transform/scale = Vector2( 6, 6 )
 
 [node name="platform horizontal2" parent="." instance=ExtResource( 39 )]
 
 transform/pos = Vector2( 2501.21, -3106.19 )
-transform/scale = Vector2( 6, 6 )
 
 [node name="platform horizontal3" parent="." instance=ExtResource( 39 )]
 
 transform/pos = Vector2( 1906.29, -3304.5 )
-transform/scale = Vector2( 6, 6 )
 
 [node name="platform horizontal4" parent="." instance=ExtResource( 39 )]
 
 transform/pos = Vector2( 2579.3, -6654.49 )
-transform/scale = Vector2( 6, 6 )
 
 [node name="platform horizontal5" parent="." instance=ExtResource( 39 )]
 
-transform/pos = Vector2( 2753.14, -8597.27 )
-transform/scale = Vector2( 6, 6 )
+transform/pos = Vector2( 2745.36, -8589.49 )
+
+[node name="platform horizontal6" parent="." instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 2029.88, -17398.1 )
 
 [node name="platform icy" parent="." instance=ExtResource( 40 )]
 
@@ -520,6 +491,10 @@ transform/pos = Vector2( 1428.07, -7828.84 )
 
 transform/pos = Vector2( 2735.34, -8186.78 )
 
+[node name="platform icy4" parent="." instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 2015.32, -14854.1 )
+
 [node name="platform vertical1" parent="." instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 495.137, -949.73 )
@@ -527,6 +502,30 @@ transform/pos = Vector2( 495.137, -949.73 )
 [node name="platform vertical2" parent="." instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 2106.27, -8962.52 )
+
+[node name="platform vertical3" parent="." instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 2715.6, -10312.3 )
+
+[node name="platform vertical4" parent="." instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 827.378, -10933.1 )
+
+[node name="platform vertical5" parent="." instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1999.65, -13170 )
+
+[node name="platform vertical6" parent="." instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 2611.07, -15539.2 )
+
+[node name="platform vertical7" parent="." instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1646.17, -15911.8 )
+
+[node name="platform vertical8" parent="." instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1001.07, -17976.9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -577,6 +576,8 @@ transform/scale = Vector2( 10.6118, 10.6118 )
 z/z = -10
 
 [node name="wave_crash_sounds" parent="." instance=ExtResource( 44 )]
+
+default/volume_db = -3.0
 
 
 [editable path="dziadek"]
