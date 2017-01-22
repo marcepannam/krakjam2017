@@ -12,5 +12,5 @@ func _ready():
 
 func _process(delta):
 	var d = hero.rot_base
-	var pos = Vector2(base_pos.x + (distance * get_item_rect().size.x) * d, base_pos.y)
+	var pos = Vector2(base_pos.x, base_pos.y + (distance * get_item_rect().size.x) * d)
 	set_global_pos(pos)
