@@ -38,6 +38,8 @@ var staff_begin
 var shoulder_ref
 var staff_ref
 var staff_hand
+var ordered
+var rot_base = 0
 
 signal platform_changed
 
@@ -57,6 +59,14 @@ func _ready():
 	staff_hand = get_node("shoulder_staff/arm_staff")
 	start_waiting()
 	
+	sort_platforms()
+	
+func sort_platforms():
+	ordered = []
+	for platform in get_node("/root").get_tree().get_nodes_in_group("platform"):
+		ordered.append([platform.get_pos().y, platform])
+	ordered.sort_custom(self, "cmp")
+	
 func start_waiting():
 	print("ready ", get_global_pos())
 	emit_signal("platform_changed", target_platform)
@@ -72,10 +82,6 @@ func cmp(a, b):
 
 func get_next_platform():
 	if target_platform == null: return
-	var ordered = []
-	for platform in get_node("/root").get_tree().get_nodes_in_group("platform"):
-		ordered.append([platform.get_pos().y, platform])
-	ordered.sort_custom(self, "cmp")
 	
 	var myIndex = null
 	var i = 0
@@ -138,8 +144,9 @@ func _process(delta):
 	var steps = [[-3000, 0], [-500, 0], [2500, 10], [4500, 20], [8500, 30], [15000, 40], [1000000, 40]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
-		
-	var rot = sin(gameTime / rotation_period * 3.1415 * 2) * rotation_amplitude
+	
+	rot_base = sin(gameTime / rotation_period * 3.1415 * 2)
+	var rot = rot_base * rotation_amplitude
 	var bgsize = background.get_item_rect().end
 	camera.set_rotd(rot + 180)
 	body.set_rotd(rot)
@@ -154,13 +161,24 @@ func _process(delta):
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
 	
-	# animate hand
-	staff_hand.set_global_pos(staff_ref.get_global_pos())
 	var hand_delta = staff_ref.get_global_pos() - shoulder_ref.get_global_pos()
-	if hand_delta.length() < 30:
-		staff_hand.set_rot(0)
-	else:
-		staff_hand.set_rot(-hand_delta.angle_to(Vector2(1, 0)))
+	var rect = staff_hand.get_item_rect()
+	var rect_length = min(260, hand_delta.length())
+	
+	rect = Rect2(rect.size.width - rect_length, 0, rect_length, rect.size.height)
+	staff_hand.set_offset(Vector2(-94, -34))
+	staff_hand.set_offset(Vector2(-94, -34) + Vector2(rect.pos.x, 0))
+	staff_hand.set_region(true)
+	staff_hand.set_region_rect(rect)
+	
+	if state == AIMING || state == STAFF_ANIM:
+		# animate hand
+		staff_hand.set_global_pos(staff_ref.get_global_pos())
+		var hand_rot = 0
+		if hand_delta.length() > 100:
+			hand_rot = -hand_delta.angle_to(Vector2(1, 0))
+			if side == -1: hand_rot = 3.1415 - hand_rot
+		staff_hand.set_rot(hand_rot)
 	
 	if state == AIMING:
 		dziadek_sounds.play_random_sound("mumble")
@@ -180,7 +198,7 @@ func _process(delta):
 			dziadek_sounds.play_random_sound("sing")
 		else:
 			dziadek_sounds.play_random_sound("mumble")
-		var staff_speed = 900 #+ player_y / 10
+		var staff_speed = 850 #800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
 			if not is_space_pressed:
@@ -279,7 +297,9 @@ func die():
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
-		target_platform = get_next_platform()
+		var next_platform = get_next_platform()
+		if next_platform == null: return
+		target_platform = next_platform
 		staff_target = staff.get_global_pos()
 		state = STAFF_ANIM
 		return

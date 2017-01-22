@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://sprites/steps/level_step_broken.png" type="Texture" id=1]
+[ext_resource path="res://sprites/steps/level_step_normal.png" type="Texture" id=1]
 [ext_resource path="res://horizontalplatform.gd" type="Script" id=2]
 
 [node name="platform" type="Sprite" groups=[ "platform" ]]
