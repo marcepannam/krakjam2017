@@ -60,27 +60,27 @@
 "samples/Dziadek - curse 8" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
 "samples/Dziadek - curse 9" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
 "samples/Dziadek - fall long" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
-"samples/Dziadek - fall short1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
-"samples/Dziadek - fall short2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
-"samples/Dziadek - jump1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
-"samples/Dziadek - jump2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
-"samples/Dziadek - land1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
-"samples/Dziadek - land2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
-"samples/Dziadek - mumble1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
-"samples/Dziadek - mumble2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 26 ) }
-"samples/Dziadek - mumble3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 27 ) }
-"samples/Dziadek - mumble4" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 28 ) }
-"samples/Dziadek - mumble5" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 29 ) }
-"samples/Dziadek - mumble6" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 30 ) }
-"samples/Dziadek - sing1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 31 ) }
-"samples/Dziadek - sing2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 32 ) }
-"samples/Dziadek - sing3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 33 ) }
-"samples/Dziadek - snore1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 34 ) }
-"samples/Dziadek - snore2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 35 ) }
+"samples/Dziadek - fall short 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
+"samples/Dziadek - fall short 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
+"samples/Dziadek - jump 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
+"samples/Dziadek - jump 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+"samples/Dziadek - land 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
+"samples/Dziadek - land 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
+"samples/Dziadek - mumble 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
+"samples/Dziadek - mumble 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 26 ) }
+"samples/Dziadek - mumble 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 27 ) }
+"samples/Dziadek - mumble 4" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 28 ) }
+"samples/Dziadek - mumble 5" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 29 ) }
+"samples/Dziadek - mumble 6" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 30 ) }
+"samples/Dziadek - sing 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 31 ) }
+"samples/Dziadek - sing 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 32 ) }
+"samples/Dziadek - sing 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 33 ) }
+"samples/Dziadek - snore 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 34 ) }
+"samples/Dziadek - snore 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 35 ) }
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends SamplePlayer\n\nfunc play_random_sound(kind):\n\tvar how_many_sounds = {\n\t\t\"curse\" : 15,\n\t\t\"jump\" : 2,\n\t\t\"snore\" : 2,\n\t\t\"sing\" : 3,\n\t\t\"mumble\" : 6,\n\t\t\"land\" : 2,\n\t\t\"fall short\" : 2,\n\t\t\"fall long\" : 1\n\t}\n\tvar sound_id = \"Dziadek - %s %d\" % [kind, randi() % how_many_sounds[kind] + 1]\n\t\n\tprint(\"play sound: \" + sound_id)\n\tplay(sound_id)"
+script/source = "extends SamplePlayer\nvar recently_played\nvar countdown = 1\n\nfunc _ready():\n\tset_process(true)\n\t\nfunc _process(delta):\n\tif(countdown > 0):\n\t\tcountdown -= delta\n\t\n\tif((recently_played == \"curse\" or recently_played == \"mumble\") and not is_active()):\n\t\trecently_played = null\n\nfunc play_random_sound(kind):\n\tif(countdown > 0 and kind != \"fall short\" and kind != \"fall long\" and kind != \"jump\" and kind != \"land\"):\n\t\tpass\n\tvar how_many_sounds = {\n\t\t\"curse\" : 15,\n\t\t\"jump\" : 2,\n\t\t\"snore\" : 2,\n\t\t\"sing\" : 3,\n\t\t\"mumble\" : 6,\n\t\t\"land\" : 2,\n\t\t\"fall short\" : 2,\n\t\t\"fall long\" : 1\n\t}\n\tvar sound_id = \"Dziadek - %s %d\" % [kind, randi() % how_many_sounds[kind] + 1]\n\t\n\tif(recently_played != kind):\n\t\tprint(\"play sound: \" + sound_id)\n\t\tplay(sound_id)\n\t\trecently_played = kind\n\t\tcountdown = 0.7"
 
 [sub_resource type="Animation" id=3]
 
@@ -122,7 +122,7 @@ editor/display_folded = true
 
 config/polyphony = 2
 config/samples = SubResource( 1 )
-default/volume_db = 1.0
+default/volume_db = 2.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0

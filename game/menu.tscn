@@ -10,9 +10,7 @@
 [ext_resource path="res://sprites/text/title.tex" type="Texture" id=8]
 [ext_resource path="res://sprites/world/black.png" type="Texture" id=9]
 [ext_resource path="res://background_sounds.tscn" type="PackedScene" id=10]
-[ext_resource path="res://sounds/mewy 1.smp" type="Sample" id=11]
-[ext_resource path="res://sounds/mewy 2.smp" type="Sample" id=12]
-[ext_resource path="res://sounds/mewy 3.smp" type="Sample" id=13]
+[ext_resource path="res://sounds/mewy 3.smp" type="Sample" id=11]
 
 [sub_resource type="GDScript" id=1]
 
@@ -72,11 +70,31 @@ tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
-[sub_resource type="SampleLibrary" id=4]
+[sub_resource type="Sample" id=4]
 
-"samples/mewy 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
-"samples/mewy 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
-"samples/mewy 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
+data = { "data":ByteArray(  ), "format":"pcm8", "length":0, "packing":"raw", "stereo":false }
+stereo = false
+length = 0
+mix_rate = 42111
+loop_format = 0
+loop_begin = 0
+loop_end = 0
+
+[sub_resource type="Sample" id=5]
+
+data = { "data":ByteArray(  ), "format":"pcm8", "length":0, "packing":"raw", "stereo":false }
+stereo = false
+length = 0
+mix_rate = 42111
+loop_format = 0
+loop_begin = 0
+loop_end = 0
+
+[sub_resource type="SampleLibrary" id=6]
+
+"samples/mewy 1" = { "db":0.0, "pitch":1.0, "sample":SubResource( 4 ) }
+"samples/mewy 2" = { "db":0.0, "pitch":1.0, "sample":SubResource( 5 ) }
+"samples/mewy 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
 
 [node name="menu" type="Node2D"]
 
@@ -194,7 +212,7 @@ default/volume_db = 1.0
 [node name="seagull_sounds" type="SamplePlayer" parent="."]
 
 config/polyphony = 2
-config/samples = SubResource( 4 )
+config/samples = SubResource( 6 )
 default/volume_db = 1.0
 default/pitch_scale = 1.0
 default/pan = 0.0
