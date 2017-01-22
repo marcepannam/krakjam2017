@@ -48,27 +48,42 @@ tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 0.0 ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource/name = "zoom"
-length = 2.0
+resource/name = "credits_zoom_in"
+length = 4.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/path = NodePath("Credits/small_title:visibility/opacity")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( -0.615572, -0.615572, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.15, 0.15 ), Vector2( 0.15, 0.15 ) ] }
+tracks/0/keys = { "times":FloatArray( 0.8, 2, 2.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/path = NodePath("Credits/credits_text:visibility/opacity")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 1.1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( -180, 150 ) ] }
+tracks/1/keys = { "times":FloatArray( 0.8, 2.4, 3, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Camera2D/blackout:visibility/opacity")
+tracks/2/path = NodePath("Credits/back_button:visibility/opacity")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
+tracks/2/keys = { "times":FloatArray( 0.8, 3, 3.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:offset")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0.8, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 220, -135 ) ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D:zoom")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0.8, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ] }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Buttons:visibility/opacity")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
 
 [sub_resource type="Animation" id=6]
 
@@ -107,42 +122,27 @@ tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = { "times":FloatArray( 0, 1, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
-resource/name = "credits_zoom_in"
-length = 4.0
+resource/name = "zoom"
+length = 2.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Credits/small_title:visibility/opacity")
+tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0.8, 2, 2.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
+tracks/0/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( -0.615572, -0.615572, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.15, 0.15 ), Vector2( 0.15, 0.15 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Credits/credits_text:visibility/opacity")
+tracks/1/path = NodePath("Camera2D:offset")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.8, 2.4, 3, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
+tracks/1/keys = { "times":FloatArray( 0, 1.1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( -180, 150 ) ] }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Credits/back_button:visibility/opacity")
+tracks/2/path = NodePath("Camera2D/blackout:visibility/opacity")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0.8, 3, 3.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Camera2D:offset")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0.8, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 220, -135 ) ] }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Camera2D:zoom")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0.8, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ] }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Buttons:visibility/opacity")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/2/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
 [node name="menu" type="Node2D"]
 
@@ -279,9 +279,9 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Intro = SubResource( 2 )
-anims/credits_zoom_in = SubResource( 3 )
+anims/credits_zoom_in = SubResource( 5 )
 anims/credits_zoom_out = SubResource( 6 )
-anims/zoom = SubResource( 5 )
+anims/zoom = SubResource( 3 )
 next/credits_zoom_out = ""
 playback/active = true
 playback/speed = 1.0
@@ -291,11 +291,11 @@ autoplay = "Intro"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 400, 300 )
-offset = Vector2( 220, -135 )
+offset = Vector2( -180, 150 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.15, 0.15 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -312,7 +312,6 @@ drag_margin/bottom = 0.2
 [node name="blackout" type="Sprite" parent="Camera2D"]
 
 visibility/visible = false
-visibility/opacity = 0.0
 texture = ExtResource( 14 )
 
 [node name="wave_crash_sounds" parent="." instance=ExtResource( 15 )]
