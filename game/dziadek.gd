@@ -115,8 +115,9 @@ func _process(delta):
 	gameTime += delta
 	
 	var player_y = -get_global_pos().y
+	#print(player_y)
 	
-	var steps = [[-3000, 0], [-300, 0], [0, 10], [2000, 20], [10000, 30], [25000, 40], [1000000, 40]]
+	var steps = [[-3000, 0], [-500, 0], [2500, 10], [4500, 20], [8500, 30], [15000, 40], [1000000, 40]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
 		
@@ -160,6 +161,7 @@ func _process(delta):
 		var new_pos = staff.get_global_pos() + vdelta.normalized() * -staff_speed * delta
 		staff.set_global_pos(new_pos)
 	elif state == JUMPING:
+		get_node("dziadek_sounds").play_random_sound("curse")
 		jump_progress += delta * jump_speed
 		var jump_length = (jump_target - jump_start).length()
 		if jump_progress > jump_length:
@@ -170,10 +172,10 @@ func _process(delta):
 		staff.set_global_pos(jump_staff_start.linear_interpolate(staff_target_pos, jump_progress / jump_length))
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 	elif state == DEATH:
-		if(pos.y > 2500 and not get_node("../Camera2D/blackout_animation").is_playing()):
+		var pos = get_global_pos()	
+		if(pos.y > 500 and not get_node("../Camera2D/blackout_animation").is_playing()):
 			get_node("../Camera2D/blackout_animation").play("blackout")
 		falling_speed += delta * 50
-		var pos = get_global_pos()	
 		if pos.y > 2900:
 			print("go to menu")
 			get_tree().change_scene_to(menu_scene)
@@ -267,4 +269,7 @@ func find_platform_at(pos):
 				best_platform = platform
 	print("BEST: ",best_y_dist)
 	return best_platform
+	
+# new swing mech
+
 	

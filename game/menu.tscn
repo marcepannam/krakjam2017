@@ -16,7 +16,7 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends Node2D\nvar zooming = false\nvar countdown = 0\n\nfunc _ready():\n    get_node(\"Buttons/play_button\").connect(\"pressed\",self,\"_on_play_pressed\")\n    get_node(\"Buttons/exit_button\").connect(\"pressed\",self,\"_on_exit_pressed\")\n    set_process(true)\n\nfunc _on_play_pressed():\n\tget_node(\"background\").blink()\n\tget_node(\"seagull_sounds\").play(\"mewy 1\")\n\t\nfunc _on_exit_pressed():\n\tget_node(\"seagull_sounds\").play(\"mewy 2\")\n\tget_tree().quit()\n\t\nfunc _process(delta):\n\tif(not zooming):\n\t\tif(get_node(\"background\").start_zoom):\n\t\t\tstart_animation()\n\telif(not get_node(\"AnimationPlayer\").is_playing()):\n\t\tif(countdown > 0.5):\n\t\t\tget_tree().change_scene(\"res://level1.tscn\");\n\t\telse:\n\t\t\tcountdown += delta\n\n\nfunc start_animation():\n\tget_node(\"AnimationPlayer\").play(\"zoom\");\n\tzooming = true;\n\t"
+script/source = "extends Node2D\nvar zooming = false\nvar countdown = 0\n\nfunc _ready():\n    get_node(\"Buttons/play_button\").connect(\"pressed\",self,\"_on_play_pressed\")\n    get_node(\"Buttons/exit_button\").connect(\"pressed\",self,\"_on_exit_pressed\")\n    set_process(true)\n\nfunc _on_play_pressed():\n\tget_node(\"background\").blink()\n\tget_node(\"seagull_sounds\").play(\"mewy 1\")\n\t\nfunc _on_exit_pressed():\n\tget_node(\"seagull_sounds\").play(\"mewy 2\")\n\tget_tree().quit()\n\t\nfunc _process(delta):\n\tif(not zooming):\n\t\tif(get_node(\"background\").start_zoom):\n\t\t\tstart_animation()\n\telif(not get_node(\"AnimationPlayer\").is_playing()):\n\t\tif(countdown > 0.5):\n\t\t\tget_tree().change_scene(\"res://level1.tscn\");\n\t\telse:\n\t\t\tcountdown += delta\n\n\nfunc start_animation():\n\tget_node(\"AnimationPlayer\").play(\"zoom\");\n\tzooming = true;\n\t\n\n\t"
 
 [sub_resource type="Animation" id=2]
 
@@ -72,7 +72,7 @@ tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
-[sub_resource type="SampleLibrary" id=6]
+[sub_resource type="SampleLibrary" id=4]
 
 "samples/mewy 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
 "samples/mewy 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
@@ -188,11 +188,14 @@ texture = ExtResource( 9 )
 
 [node name="wave_crash_sounds" parent="." instance=ExtResource( 10 )]
 
+config/polyphony = 2
+default/volume_db = 1.0
+
 [node name="seagull_sounds" type="SamplePlayer" parent="."]
 
-config/polyphony = 1
-config/samples = SubResource( 6 )
-default/volume_db = 0.0
+config/polyphony = 2
+config/samples = SubResource( 4 )
+default/volume_db = 1.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0
