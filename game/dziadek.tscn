@@ -30,17 +30,17 @@ tracks/2/type = "value"
 tracks/2/path = NodePath("shoulder_staff/staff:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 295.25, -95.5415 ), Vector2( 267.429, -122.334 ), Vector2( 295.25, -95.5415 ) ] }
+tracks/2/keys = { "times":FloatArray( 0, 0.4, 0.6, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 553.704, 100.947 ), Vector2( 605.178, -26.3057 ), Vector2( 592.667, 16.2427 ), Vector2( 553.704, 100.947 ) ] }
 tracks/3/type = "value"
 tracks/3/path = NodePath("shoulder_staff/staff:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 60.6142, 81.8981, 60.6142 ] }
+tracks/3/keys = { "times":FloatArray( 0, 0.4, 0.6, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 60.6142, 81.8981, 74.8035, 60.6142 ] }
 tracks/4/type = "value"
 tracks/4/path = NodePath("shoulder_staff/arm_staff:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 89.4774, 9.6852 ), Vector2( 89.4774, 9.6852 ) ] }
+tracks/4/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 206.591, -66.2675 ), Vector2( 219.913, -71.5849 ), Vector2( 206.591, -66.2675 ) ] }
 tracks/5/type = "value"
 tracks/5/path = NodePath("shoulder_staff/arm_staff:transform/rot")
 tracks/5/interp = 1
@@ -352,7 +352,7 @@ tracks/14/type = "value"
 tracks/14/path = NodePath("shoulder_staff/arm_staff:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
-tracks/14/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 89.4774, 9.6852 ) ] }
+tracks/14/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 298.448, 45.6872 ) ] }
 tracks/15/type = "value"
 tracks/15/path = NodePath("shoulder_staff/arm_staff:transform/rot")
 tracks/15/interp = 1
@@ -442,7 +442,7 @@ tracks/32/type = "value"
 tracks/32/path = NodePath("shoulder_staff/staff:transform/pos")
 tracks/32/interp = 1
 tracks/32/imported = false
-tracks/32/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 294.938, 44.8279 ) ] }
+tracks/32/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 288.427, 413.127 ) ] }
 tracks/33/type = "value"
 tracks/33/path = NodePath("shoulder_staff/staff:transform/rot")
 tracks/33/interp = 1
@@ -484,7 +484,7 @@ tracks/39/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "upda
 resource/name = "slipping"
 length = 1.5
 loop = false
-step = 0.05
+step = 0.03
 tracks/0/type = "value"
 tracks/0/path = NodePath("hip/body/arm_lamp/lamp:transform/pos")
 tracks/0/interp = 1
@@ -544,12 +544,12 @@ tracks/11/type = "value"
 tracks/11/path = NodePath("shoulder_staff/arm_staff:transform/pos")
 tracks/11/interp = 1
 tracks/11/imported = false
-tracks/11/keys = { "times":FloatArray( 0.1875, 0.375, 0.75, 0.9375, 1.125, 1.3125 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 89.4774, 9.6852 ), Vector2( 89.4774, 9.6852 ), Vector2( 89.4774, 9.6852 ), Vector2( 89.4774, 9.6852 ), Vector2( 89.4774, 9.6852 ), Vector2( 89.4774, 9.6852 ) ] }
+tracks/11/keys = { "times":FloatArray( 0, 0.2, 0.39, 0.57, 0.75, 0.93, 1.14, 1.32, 1.5 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 207.625, 9.6852 ), Vector2( 222.852, 22.1335 ), Vector2( 217.901, 7.7234 ), Vector2( 234.514, -7.43583 ), Vector2( 244.842, 2.34345 ), Vector2( 267.395, -23.1634 ), Vector2( 267.465, -47.8081 ), Vector2( 231.53, -59.9834 ), Vector2( 209.419, -47.7697 ) ] }
 tracks/12/type = "value"
 tracks/12/path = NodePath("shoulder_staff/arm_staff:transform/rot")
 tracks/12/interp = 1
 tracks/12/imported = false
-tracks/12/keys = { "times":FloatArray( 0.1875, 0.375, 0.75, 0.9375, 1.125, 1.3125 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 3.46857, 6.33452, -3.19803, 3.70947, 22.205, 35.9366 ] }
+tracks/12/keys = { "times":FloatArray( 0, 0.2, 0.39, 0.57, 0.75, 0.93, 1.14, 1.32, 1.5 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 3.46857, 3.65963, 5.95322, 1.37759, -3.19803, 3.43317, 23.3035, 35.9366, 35.9366 ] }
 tracks/13/type = "value"
 tracks/13/path = NodePath("shoulder_staff:transform/pos")
 tracks/13/interp = 1
@@ -579,12 +579,12 @@ tracks/18/type = "value"
 tracks/18/path = NodePath("shoulder_staff/staff:transform/pos")
 tracks/18/interp = 1
 tracks/18/imported = false
-tracks/18/keys = { "times":FloatArray( 0.1875, 0.375, 0.5625, 0.75, 0.9375, 1.125, 1.3125 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 310.519, 33.169 ), Vector2( 301.404, 22.1879 ), Vector2( 306.862, 42.9937 ), Vector2( 300.34, 59.936 ), Vector2( 316.893, 26.6542 ), Vector2( 305.233, -42.1785 ), Vector2( 283.564, -95.702 ) ] }
+tracks/18/keys = { "times":FloatArray( 0, 0.2, 0.39, 0.57, 0.75, 0.93, 1.14, 1.32 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 366.309, 356.752 ), Vector2( 387.914, 369.991 ), Vector2( 342.287, 371.029 ), Vector2( 338.172, 349.296 ), Vector2( 339.687, 366.896 ), Vector2( 508.984, 267.227 ), Vector2( 560.5, 181.8 ), Vector2( 569.902, 101.572 ) ] }
 tracks/19/type = "value"
 tracks/19/path = NodePath("shoulder_staff/staff:transform/rot")
 tracks/19/interp = 1
 tracks/19/imported = false
-tracks/19/keys = { "times":FloatArray( 0.1875, 0.375, 0.5625, 0.75, 0.9375, 1.125, 1.3125 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 21.9141, 14.4535, 13.7738, 13.0941, 38.0571, 48.6695, 60.6142 ] }
+tracks/19/keys = { "times":FloatArray( 0, 0.2, 0.39, 0.57, 0.75, 0.93, 1.14, 1.32 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 21.9141, 21.4167, 14.3991, 13.7466, 13.0941, 37.0586, 49.6251, 60.6142 ] }
 tracks/20/type = "value"
 tracks/20/path = NodePath("hip/body/arm_lamp/lamp/lamp_end:transform/pos")
 tracks/20/interp = 1
@@ -779,12 +779,14 @@ tracks/10/keys = { "times":FloatArray( 0, 0.5, 1.5 ), "transitions":FloatArray( 
 [node name="shoulder_staff" type="Node2D" parent="."]
 
 visibility/behind_parent = true
-transform/pos = Vector2( 65.9415, -141.77 )
+transform/pos = Vector2( 336.298, 3.28463 )
+transform/rot = -35.2555
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="staff" type="Sprite" parent="shoulder_staff"]
 
-transform/pos = Vector2( 288.427, 413.127 )
+transform/pos = Vector2( 597.737, -7.90978 )
+transform/rot = 78.8212
 texture = ExtResource( 1 )
 offset = Vector2( 10.3458, -189.094 )
 
@@ -799,7 +801,8 @@ transform/pos = Vector2( -7.40247, -370.124 )
 [node name="arm_staff" type="Sprite" parent="shoulder_staff"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( 298.448, 45.6872 )
+transform/pos = Vector2( 217.987, -70.8162 )
+transform/rot = 45.7036
 texture = ExtResource( 2 )
 offset = Vector2( -94.9119, -34.2323 )
 
@@ -811,7 +814,8 @@ transform/pos = Vector2( 9.91708, -22.3771 )
 
 [node name="body" type="Sprite" parent="hip"]
 
-transform/pos = Vector2( 7.60181, 199.896 )
+transform/pos = Vector2( -66.6796, 140.512 )
+transform/rot = -72.512
 texture = ExtResource( 3 )
 offset = Vector2( -7.60181, -199.896 )
 
@@ -824,14 +828,15 @@ __meta__ = { "_edit_ik_":true }
 
 [node name="head" type="Sprite" parent="hip/body"]
 
-transform/pos = Vector2( 53.5681, -443.45 )
+transform/pos = Vector2( 29.1642, -466.823 )
+transform/rot = 74.5011
 texture = ExtResource( 4 )
-offset = Vector2( 53.2001, -10.2917 )
+offset = Vector2( 30, -10.2917 )
 
 [node name="mustache_r" type="Sprite" parent="hip/body/head"]
 
 transform/pos = Vector2( 85.4499, -10.9931 )
-transform/rot = 2.58837
+transform/rot = -21.5151
 texture = ExtResource( 5 )
 offset = Vector2( -46.3962, 1.50915 )
 __meta__ = { "_edit_ik_":true }
@@ -843,7 +848,7 @@ transform/pos = Vector2( -70.7925, 0 )
 [node name="mustache_l" type="Sprite" parent="hip/body/head"]
 
 transform/pos = Vector2( 105.485, -11.1037 )
-transform/rot = 2.65482
+transform/rot = 24.2043
 texture = ExtResource( 6 )
 offset = Vector2( 40.7148, 0.811981 )
 __meta__ = { "_edit_ik_":true }
@@ -859,15 +864,15 @@ transform/pos = Vector2( 185.485, -11.1037 )
 [node name="arm_lamp" type="Sprite" parent="hip/body"]
 
 transform/pos = Vector2( -40.8135, -319.458 )
-transform/rot = -4.04946
+transform/rot = -78.1601
 texture = ExtResource( 7 )
 offset = Vector2( -31.7883, 79.5623 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="lamp" type="Sprite" parent="hip/body/arm_lamp"]
 
-transform/pos = Vector2( 7.40265, 183.212 )
-transform/rot = 4.04946
+transform/pos = Vector2( 7.40269, 183.212 )
+transform/rot = -39.4394
 texture = ExtResource( 8 )
 offset = Vector2( 0.809143, 56.3511 )
 __meta__ = { "_edit_bone_":true }
@@ -875,12 +880,14 @@ __meta__ = { "_edit_bone_":true }
 [node name="lamp_end" type="Position2D" parent="hip/body/arm_lamp/lamp"]
 
 transform/pos = Vector2( 0.464233, 106.694 )
+transform/rot = -1.6563
 __meta__ = { "_edit_bone_":true }
 
 [node name="legs" type="Sprite" parent="hip"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( 3.43277, 219.229 )
+transform/pos = Vector2( -110.501, 152.717 )
+transform/rot = -96.4918
 texture = ExtResource( 9 )
 offset = Vector2( -0.268646, 81.8255 )
 
