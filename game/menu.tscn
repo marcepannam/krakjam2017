@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
@@ -122,6 +122,28 @@ tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = { "times":FloatArray( 0, 1, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
+[sub_resource type="Animation" id=7]
+
+resource/name = "winning_zoom_out"
+length = 4.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.8 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -175, -200 ), Vector2( 0, 0 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.8 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Buttons:visibility/opacity")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 3.4, 4 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
+
 [sub_resource type="Animation" id=3]
 
 resource/name = "zoom"
@@ -210,8 +232,6 @@ params/scale = Vector2( 0.5, 0.5 )
 
 [node name="Buttons" type="Node2D" parent="."]
 
-visibility/opacity = 0.0
-
 [node name="play_button" type="TextureButton" parent="Buttons"]
 
 rect/scale = Vector2( 0.4, 0.4 )
@@ -268,7 +288,7 @@ textures/hover = ExtResource( 12 )
 
 [node name="Title" type="Sprite" parent="."]
 
-visibility/opacity = 0.944444
+visibility/opacity = 0.0
 transform/pos = Vector2( 444.454, 350.974 )
 transform/scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 13 )
@@ -281,8 +301,10 @@ root/root = NodePath("..")
 anims/Intro = SubResource( 2 )
 anims/credits_zoom_in = SubResource( 5 )
 anims/credits_zoom_out = SubResource( 6 )
+anims/winning_zoom_out = SubResource( 7 )
 anims/zoom = SubResource( 3 )
 next/credits_zoom_out = ""
+next/winning_zoom_out = ""
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -291,11 +313,10 @@ autoplay = "Intro"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 400, 300 )
-offset = Vector2( -180, 150 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.15, 0.15 )
+zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -312,6 +333,7 @@ drag_margin/bottom = 0.2
 [node name="blackout" type="Sprite" parent="Camera2D"]
 
 visibility/visible = false
+visibility/opacity = 0.0
 texture = ExtResource( 14 )
 
 [node name="wave_crash_sounds" parent="." instance=ExtResource( 15 )]
