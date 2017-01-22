@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://sprites/world/level_foreground_lighten base.tex" type="Texture" id=1]
 [ext_resource path="res://sprites/world/schemat.tex" type="Texture" id=2]
@@ -20,6 +20,10 @@
 [ext_resource path="res://sprites/world/level_cloud02.tex" type="Texture" id=18]
 [ext_resource path="res://sprites/world/level_background_1.tex" type="Texture" id=19]
 [ext_resource path="res://sprites/world/vignette.tex" type="Texture" id=20]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Node2D\n\nfunc _ready():\n\tget_node(\"AnimationPlayer\").play(\"clouds\")"
 
 [sub_resource type="Animation" id=1]
 
@@ -45,8 +49,11 @@ tracks/2/keys = { "times":FloatArray( 0, 2, 4, 6 ), "transitions":FloatArray( 1,
 
 [node name="level_background" type="Node2D"]
 
+script/script = SubResource( 2 )
+
 [node name="foreground" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 400, -800 )
 transform/scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 1 )
@@ -199,31 +206,31 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="background" type="Sprite" parent="CanvasLayer"]
+[node name="background" type="Sprite" parent="CanvasLayer" groups=[ "scrolling_background" ]]
 
 transform/pos = Vector2( 400, -800 )
 transform/scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 16 )
 
-[node name="cloud1" type="Sprite" parent="CanvasLayer"]
+[node name="cloud1" type="Sprite" parent="CanvasLayer" groups=[ "scrolling_background" ]]
 
 transform/pos = Vector2( 1876.24, -446.522 )
 transform/scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 17 )
 
-[node name="cloud2" type="Sprite" parent="CanvasLayer"]
+[node name="cloud2" type="Sprite" parent="CanvasLayer" groups=[ "scrolling_background" ]]
 
 transform/pos = Vector2( -572.09, -656.698 )
 transform/scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 18 )
 
-[node name="cloud3" type="Sprite" parent="CanvasLayer"]
+[node name="cloud3" type="Sprite" parent="CanvasLayer" groups=[ "scrolling_background" ]]
 
 transform/pos = Vector2( 561.727, -1906.84 )
 transform/scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 18 )
 
-[node name="mountain" type="Sprite" parent="CanvasLayer"]
+[node name="mountain" type="Sprite" parent="CanvasLayer" groups=[ "scrolling_background" ]]
 
 transform/pos = Vector2( 400, -800 )
 transform/scale = Vector2( 0.67, 0.67 )
