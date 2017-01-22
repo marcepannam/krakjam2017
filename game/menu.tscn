@@ -54,7 +54,7 @@ tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 0.0 ] }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource/name = "credits_zoom_in"
 length = 4.0
@@ -91,7 +91,7 @@ tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 
 resource/name = "credits_zoom_out"
 length = 2.0
@@ -128,9 +128,8 @@ tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = { "times":FloatArray( 0, 1, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource/name = "zoom"
 length = 2.0
 loop = false
 step = 0.1
@@ -150,7 +149,7 @@ tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = { "times":FloatArray( 0, 1.4, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
-[sub_resource type="SampleLibrary" id=4]
+[sub_resource type="SampleLibrary" id=6]
 
 "samples/menu - click1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
 "samples/menu - click2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
@@ -291,9 +290,9 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Intro = SubResource( 2 )
-anims/credits_zoom_in = SubResource( 5 )
-anims/credits_zoom_out = SubResource( 6 )
-anims/zoom = SubResource( 3 )
+anims/credits_zoom_in = SubResource( 3 )
+anims/credits_zoom_out = SubResource( 4 )
+anims/zoom = SubResource( 5 )
 next/credits_zoom_out = ""
 playback/active = true
 playback/speed = 1.0
@@ -334,7 +333,7 @@ config/polyphony = 2
 [node name="menu_sounds" type="SamplePlayer" parent="."]
 
 config/polyphony = 2
-config/samples = SubResource( 4 )
+config/samples = SubResource( 6 )
 default/volume_db = 1.0
 default/pitch_scale = 1.0
 default/pan = 0.0
