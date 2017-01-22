@@ -163,11 +163,11 @@ func _process(delta):
 	
 	var hand_delta = staff_ref.get_global_pos() - shoulder_ref.get_global_pos()
 	var rect = staff_hand.get_item_rect()
-	var rect_length = min(260, hand_delta.length())
+	var rect_length = min(420, hand_delta.length())
 	
 	rect = Rect2(rect.size.width - rect_length, 0, rect_length, rect.size.height)
-	staff_hand.set_offset(Vector2(-94, -34))
-	staff_hand.set_offset(Vector2(-94, -34) + Vector2(rect.pos.x, 0))
+	#staff_hand.set_offset(Vector2(-94, -34))
+	staff_hand.set_offset(Vector2(-170, -34) + Vector2(rect.pos.x, 0))
 	staff_hand.set_region(true)
 	staff_hand.set_region_rect(rect)
 	
@@ -257,7 +257,8 @@ var jump_progress
 var jump_staff_start
 
 func get_platform_target(platform):
-	var me_delta = Vector2(120, -530)
+	var me_delta = Vector2(40, -510)
+	#if side == -1: me_delta = 130
 	var platform_width = platform.get_item_rect().size.width / 2
 	var platform_pos = platform.get_global_pos() + platform.get_item_rect().pos
 	return platform_pos + Vector2(platform_width / 2, 0) + me_delta
