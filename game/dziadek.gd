@@ -36,6 +36,8 @@ var menu_scene = preload("res://menu.tscn")
 var staff_end
 var shoulder_ref
 
+signal platform_changed
+
 func _ready():
 	set_process(true)
 	set_process_input(true)
@@ -52,6 +54,7 @@ func _ready():
 	
 func start_waiting():
 	print("ready ", get_global_pos())
+	emit_signal("platform_changed", target_platform)
 	animation_player.play("stand")
 	state = AIMING
 	# Should we rotate? Count platforms on the right and above.
@@ -145,10 +148,7 @@ func _process(delta):
 		d.set_rotd(rot)
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
-	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
-	if side == -1: staff_vec.x = -staff.get_item_rect().size.x + 7
-	staff_end += staff_vec.rotated(staff.get_rot() * side)
-	# update()
+	update()
 	
 	if state == AIMING:
 		dziadek_sounds.play_random_sound("mumble")
