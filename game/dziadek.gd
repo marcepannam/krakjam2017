@@ -34,7 +34,10 @@ var background
 var is_space_pressed = false
 var menu_scene = preload("res://menu.tscn")
 var staff_end
+var staff_begin
 var shoulder_ref
+var staff_ref
+var staff_hand
 
 signal platform_changed
 
@@ -50,6 +53,8 @@ func _ready():
 	animation_player = get_node("AnimationPlayer")
 	background = get_node("/root/Control/level_background/CanvasLayer/background")
 	shoulder_ref = get_node("hip/body/shoulder_staff_ref")
+	staff_ref = get_node("shoulder_staff/staff/staff_begin")
+	staff_hand = get_node("shoulder_staff/arm_staff")
 	start_waiting()
 	
 func start_waiting():
@@ -148,7 +153,14 @@ func _process(delta):
 		d.set_rotd(rot)
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
-	#update()
+	
+	# animate hand
+	staff_hand.set_global_pos(staff_ref.get_global_pos())
+	var hand_delta = staff_ref.get_global_pos() - shoulder_ref.get_global_pos()
+	if hand_delta.length() < 30:
+		staff_hand.set_rot(0)
+	else:
+		staff_hand.set_rot(-hand_delta.angle_to(Vector2(1, 0)))
 	
 	if state == AIMING:
 		dziadek_sounds.play_random_sound("mumble")
