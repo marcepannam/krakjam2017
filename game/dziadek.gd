@@ -237,7 +237,8 @@ func _process(delta):
 			get_tree().change_scene_to(menu_scene)
 			return
 		pos.y += falling_speed
-		pos.x += side * 20
+		if death_jump:
+			pos.x += side * 20
 		set_global_pos(pos)
 		
 		var staff_pos = staff.get_pos()
@@ -248,6 +249,7 @@ func _process(delta):
 			animation_player.play("falling")
 
 var falling_speed = -20
+var death_jump
 
 var jump_target
 var jump_start
@@ -293,7 +295,13 @@ func do_action():
 func die():
 	print("die :( at ", get_global_pos())
 	state = DEATH
+	death_jump = true
 	animation_player.play("slipping")
+
+func die_base():
+	state = DEATH
+	death_jump = false
+	falling_speed = 20
 
 func _input(event):
 	if event.type == InputEvent.KEY and event.scancode == KEY_Q:
