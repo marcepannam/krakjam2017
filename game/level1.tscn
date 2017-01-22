@@ -122,7 +122,7 @@ editor/display_folded = true
 
 config/polyphony = 2
 config/samples = SubResource( 1 )
-default/volume_db = 2.0
+default/volume_db = 3.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0

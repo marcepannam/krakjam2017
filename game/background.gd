@@ -23,9 +23,12 @@ func _process(delta):
 		blink_timer -= delta * 50
 		if(blink_timer <= 0):
 			lights_off()
+			get_node("../menu_sounds").play("menu - lanternpop")
 			start_zoom = true
 		elif((randi() % 600) < blink_timer):
 			if(lights_on):
+				if(not get_node("../menu_sounds").is_active()):
+					get_node("../menu_sounds").play("menu - lanternpop")
 				lights_off()
 			else:
 				lights_on()
@@ -34,6 +37,7 @@ func blink():
 	if(blink_timer < 0):
 		blink_timer = 100
 		lights_off()
+		get_node("../menu_sounds").play("menu - lanternpop")
 	
 	
 

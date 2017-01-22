@@ -1,27 +1,33 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://sounds/waves crash 1.smp" type="Sample" id=1]
-[ext_resource path="res://sounds/waves crash 2.smp" type="Sample" id=2]
-[ext_resource path="res://sounds/waves crash 3.smp" type="Sample" id=3]
-[ext_resource path="res://sounds/waves crash 4.smp" type="Sample" id=4]
-[ext_resource path="res://sounds/waves bg.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sounds/mewy 1.smp" type="Sample" id=1]
+[ext_resource path="res://sounds/mewy 2.smp" type="Sample" id=2]
+[ext_resource path="res://sounds/mewy 3.smp" type="Sample" id=3]
+[ext_resource path="res://sounds/waves crash 1.smp" type="Sample" id=4]
+[ext_resource path="res://sounds/waves crash 2.smp" type="Sample" id=5]
+[ext_resource path="res://sounds/waves crash 3.smp" type="Sample" id=6]
+[ext_resource path="res://sounds/waves crash 4.smp" type="Sample" id=7]
+[ext_resource path="res://sounds/waves bg.ogg" type="AudioStream" id=8]
 
 [sub_resource type="SampleLibrary" id=1]
 
-"samples/waves crash 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 1 ) }
-"samples/waves crash 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
-"samples/waves crash 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
-"samples/waves crash 4" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+"samples/mewy 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 1 ) }
+"samples/mewy 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+"samples/mewy 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+"samples/waves crash 1" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+"samples/waves crash 2" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
+"samples/waves crash 3" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 6 ) }
+"samples/waves crash 4" = { "db":0.0, "pitch":1.0, "sample":ExtResource( 7 ) }
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends SamplePlayer\n\nfunc _ready():\n\tset_process(true)\n\t\nfunc _process(delta):\n\tif(randf() < 0.2 * delta):\n\t\tvar wave_id = \"waves crash %d\" % (randi() % 4 + 1)\n\t\t#print(wave_id);\n\t\tplay(wave_id)"
+script/source = "extends SamplePlayer\n\nfunc _ready():\n\tset_process(true)\n\t\nfunc _process(delta):\n\tif(is_active()):\n\t\tpass\n\tif(randf() < 0.2 * delta):\n\t\tvar wave_id = \"waves crash %d\" % (randi() % 4 + 1)\n\t\t#print(wave_id);\n\t\tplay(wave_id)\n\telif(randf() < 0.1 * delta):\n\t\tvar sound_id = \"mewy %d\" % (randi() % 3 + 1)\n\t\t#print(wave_id);\n\t\tplay(sound_id)"
 
 [node name="wave_crash_sounds" type="SamplePlayer"]
 
-config/polyphony = 1
+config/polyphony = 3
 config/samples = SubResource( 1 )
-default/volume_db = 0.0
+default/volume_db = 1.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0
@@ -37,7 +43,7 @@ script/script = SubResource( 2 )
 
 [node name="waves_background_sound" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 5 )
+stream/stream = ExtResource( 8 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
