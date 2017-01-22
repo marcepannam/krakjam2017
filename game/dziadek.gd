@@ -230,7 +230,7 @@ func do_action():
 	print("do action ", staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
 	var current_platform = target_platform
 	target_platform = find_platform_at(get_global_pos() + staff_end)
-	if(target_platform == current_platform or target_platform == null):
+	if(target_platform == null or current_platform == null or target_platform == current_platform):
 		dziadek_sounds.play_random_sound("curse")
 	
 	
