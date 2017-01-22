@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
@@ -85,43 +85,6 @@ tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
 
-[sub_resource type="Animation" id=7]
-
-resource/name = "credits_zoom_in"
-length = 4.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Credits/small_title:visibility/opacity")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0.8, 2, 2.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Credits/credits_text:visibility/opacity")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.8, 2.4, 3, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Credits/back_button:visibility/opacity")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0.8, 3, 3.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 1.0 ] }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Camera2D:offset")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0.8, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 220, -135 ) ] }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Camera2D:zoom")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0.8, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ] }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Buttons:visibility/opacity")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
-
 [sub_resource type="Animation" id=6]
 
 resource/name = "credits_zoom_out"
@@ -159,42 +122,27 @@ tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = { "times":FloatArray( 0, 1, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
-resource/name = "winning"
-length = 2.0
+resource/name = "winning_zoom_out"
+length = 4.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Credits/small_title:visibility/opacity")
+tracks/0/path = NodePath("Camera2D:offset")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 1.0, 0.0, 0.0 ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.8 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -175, -200 ), Vector2( 0, 0 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Credits/credits_text:visibility/opacity")
+tracks/1/path = NodePath("Camera2D:zoom")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 1.0, 0.0, 0.0 ] }
+tracks/1/keys = { "times":FloatArray( 0, 0.8 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ] }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Credits/back_button:visibility/opacity")
+tracks/2/path = NodePath("Buttons:visibility/opacity")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 1.0, 0.0, 0.0 ] }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Camera2D:offset")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( -175, -200 ), Vector2( -175, -200 ), Vector2( 0, 0 ) ] }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Camera2D:zoom")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 0.3, 0.3 ), Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ] }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Buttons:visibility/opacity")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = { "times":FloatArray( 0, 1, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
+tracks/2/keys = { "times":FloatArray( 0, 3.4, 4 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0 ] }
 
 [sub_resource type="Animation" id=3]
 
@@ -228,6 +176,7 @@ script/script = ExtResource( 1 )
 
 [node name="small_title" type="TextureButton" parent="Credits"]
 
+visibility/opacity = 0.0
 rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -245,6 +194,7 @@ params/scale = Vector2( 0.5, 0.5 )
 
 [node name="credits_text" type="TextureButton" parent="Credits"]
 
+visibility/opacity = 0.0
 rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -262,6 +212,7 @@ params/scale = Vector2( 0.5, 0.5 )
 
 [node name="back_button" type="TextureButton" parent="Credits"]
 
+visibility/opacity = 0.0
 rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -280,8 +231,6 @@ textures/hover = ExtResource( 6 )
 params/scale = Vector2( 0.5, 0.5 )
 
 [node name="Buttons" type="Node2D" parent="."]
-
-visibility/opacity = 0.0
 
 [node name="play_button" type="TextureButton" parent="Buttons"]
 
@@ -351,13 +300,11 @@ playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Intro = SubResource( 2 )
 anims/credits_zoom_in = SubResource( 5 )
-"anims/credits_zoom_in (copy)" = SubResource( 7 )
 anims/credits_zoom_out = SubResource( 6 )
-anims/winning = SubResource( 8 )
+anims/winning_zoom_out = SubResource( 7 )
 anims/zoom = SubResource( 3 )
-"next/credits_zoom_in (copy)" = ""
 next/credits_zoom_out = ""
-next/winning = ""
+next/winning_zoom_out = ""
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

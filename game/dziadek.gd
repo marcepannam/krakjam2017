@@ -154,13 +154,24 @@ func _process(delta):
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
 	
-	# animate hand
-	staff_hand.set_global_pos(staff_ref.get_global_pos())
 	var hand_delta = staff_ref.get_global_pos() - shoulder_ref.get_global_pos()
-	if hand_delta.length() < 30:
-		staff_hand.set_rot(0)
-	else:
-		staff_hand.set_rot(-hand_delta.angle_to(Vector2(1, 0)))
+	var rect = staff_hand.get_item_rect()
+	var rect_length = min(260, hand_delta.length())
+	
+	rect = Rect2(rect.size.width - rect_length, 0, rect_length, rect.size.height)
+	staff_hand.set_offset(Vector2(-94, -34))
+	staff_hand.set_offset(Vector2(-94, -34) + Vector2(rect.pos.x, 0))
+	staff_hand.set_region(true)
+	staff_hand.set_region_rect(rect)
+	
+	if state == AIMING || state == STAFF_ANIM:
+		# animate hand
+		staff_hand.set_global_pos(staff_ref.get_global_pos())
+		var hand_rot = 0
+		if hand_delta.length() > 100:
+			hand_rot = -hand_delta.angle_to(Vector2(1, 0))
+			if side == -1: hand_rot = 3.1415 - hand_rot
+		staff_hand.set_rot(hand_rot)
 	
 	if state == AIMING:
 		dziadek_sounds.play_random_sound("mumble")
