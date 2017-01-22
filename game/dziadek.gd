@@ -148,10 +148,7 @@ func _process(delta):
 		d.set_rotd(rot)
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
-	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
-	if side == -1: staff_vec.x = -staff.get_item_rect().size.x + 7
-	staff_end += staff_vec.rotated(staff.get_rot() * side)
-	# update()
+	update()
 	
 	if state == AIMING:
 		dziadek_sounds.play_random_sound("mumble")
