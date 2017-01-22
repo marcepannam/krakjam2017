@@ -180,7 +180,7 @@ func _process(delta):
 			dziadek_sounds.play_random_sound("sing")
 		else:
 			dziadek_sounds.play_random_sound("mumble")
-		var staff_speed = 900 #+ player_y / 10
+		var staff_speed = 850 #800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
 			if not is_space_pressed:
