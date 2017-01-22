@@ -59,41 +59,42 @@ texture = ExtResource( 2 )
 [node name="obrazek" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -202.38, 1560.16 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 offset = Vector2( 3.68165, 78.813 )
 
 [node name="obrazek1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -107.923, 177.094 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 offset = Vector2( 2.08941, 40.4471 )
 
 [node name="obrazek2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -111.198, -646.155 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 5 )
 offset = Vector2( -0.763441, 44.3652 )
 
 [node name="obrazek3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
-transform/pos = Vector2( -98.4107, -1209.52 )
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( -93.9331, -1208.03 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 offset = Vector2( 1.43428, 40.311 )
 
 [node name="obrazek4" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
-transform/pos = Vector2( -83.4853, -1333.69 )
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( -76.0226, -1302.35 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 7 )
 offset = Vector2( 1.43428, 40.311 )
 
 [node name="kotwica" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
-transform/pos = Vector2( 129.21, -1321.85 )
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( 123.24, -1302.45 )
+transform/scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 8 )
 offset = Vector2( -0.301623, 48.9364 )
 
@@ -128,70 +129,70 @@ offset = Vector2( 1.95021, 26.1925 )
 [node name="lampka" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 197.72, 1473.93 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.09658, 46.0636 )
 
 [node name="lampka1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -113.873, 901.906 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.09658, 46.0636 )
 
 [node name="lampka2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 123.404, 310.789 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.09658, 46.0636 )
 
 [node name="lampka3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -96.3819, -353.516 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.09658, 46.0636 )
 
 [node name="lampka4" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 96.107, -1033.83 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.09658, 46.0636 )
 
 [node name="gacie" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 55.1326, -461.648 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 11 )
 offset = Vector2( 11.2, 57.524 )
 
 [node name="gacie1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 122.948, -492.758 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 12 )
 offset = Vector2( 18.4502, 34.1218 )
 
 [node name="gacie2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -160.037, -422.091 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 13 )
 offset = Vector2( 26.4164, 18.2975 )
 
 [node name="gacie3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -131.237, -109.877 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 14 )
 offset = Vector2( 9.32203, 42.0669 )
 
 [node name="gacie4" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 131.129, 31.1715 )
-transform/scale = Vector2( 1, 1 )
+transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 15 )
 offset = Vector2( -28.9236, 46.6246 )
 

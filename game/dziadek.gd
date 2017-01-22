@@ -8,6 +8,7 @@ var staff_angle = 0
 var staff_circle_radius = 250
 var staff_rps = 1.5
 var staff_target
+var dziadek_sounds
 
 var target_platform
 
@@ -41,6 +42,7 @@ func _ready():
 	staff = get_node("shoulder_staff/staff")
 	body = get_node("hip/body")
 	root = get_node("/root")
+	dziadek_sounds = get_node("dziadek_sounds")
 	staff_base_offset = staff.get_global_pos() - get_global_pos()
 	animation_player = get_node("AnimationPlayer")
 	background = get_node("/root/Control/level_background/CanvasLayer/background")
@@ -115,8 +117,9 @@ func _process(delta):
 	gameTime += delta
 	
 	var player_y = -get_global_pos().y
+	#print(player_y)
 	
-	var steps = [[-3000, 0], [-300, 0], [0, 10], [2000, 20], [10000, 30], [25000, 40], [1000000, 40]]
+	var steps = [[-3000, 0], [-500, 0], [2500, 10], [4500, 20], [8500, 30], [15000, 40], [1000000, 40]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
 		
@@ -125,9 +128,13 @@ func _process(delta):
 	camera.set_rotd(rot + 180)
 	body.set_rotd(rot)
 	
+	
 	var staff_offset = Vector2(staff_base_offset.x * side, staff_base_offset.y).rotated(body.get_rot())
 	
 	staff.set_rotd(rot)
+	var danglings = get_tree().get_nodes_in_group("danglings")
+	for d in danglings:
+		d.set_rotd(rot)
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
 	var staff_vec = Vector2(0, staff.get_item_rect().size.y)
@@ -136,6 +143,7 @@ func _process(delta):
 	# update()
 	
 	if state == AIMING:
+		dziadek_sounds.play_random_sound("mumble")
 		if not animation_player.is_playing():
 			animation_player.play(["stand", "stand2", "stand3"][randi() % 3])
 
@@ -145,8 +153,13 @@ func _process(delta):
 		var staff_pos = get_global_pos() + staff_offset + Vector2(staff_circle_radius, 0).rotated(staff_angle)
 		staff.set_global_pos(staff_pos)
 	elif state == WAITING:
+		dziadek_sounds.play_random_sound("sing")
 		staff.set_global_pos(get_global_pos() + staff_offset)
 	elif state == STAFF_ANIM:
+		if(randf() < 0.01):
+			dziadek_sounds.play_random_sound("sing")
+		else:
+			dziadek_sounds.play_random_sound("mumble")
 		var staff_speed = 800 + player_y / 10
 		var vdelta = staff.get_global_pos() - staff_target
 		if vdelta.length() < delta * staff_speed:
@@ -156,6 +169,8 @@ func _process(delta):
 		var new_pos = staff.get_global_pos() + vdelta.normalized() * -staff_speed * delta
 		staff.set_global_pos(new_pos)
 	elif state == JUMPING:
+		if(not dziadek_sounds.is_active()):
+			dziadek_sounds.play_random_sound("jump")
 		jump_progress += delta * jump_speed
 		var jump_length = (jump_target - jump_start).length()
 		if jump_progress > jump_length:
@@ -166,8 +181,14 @@ func _process(delta):
 		staff.set_global_pos(jump_staff_start.linear_interpolate(staff_target_pos, jump_progress / jump_length))
 		set_global_pos(jump_start.linear_interpolate(jump_target, jump_progress / jump_length))
 	elif state == DEATH:
-		falling_speed += delta * 50
 		var pos = get_global_pos()	
+		if(pos.y > - 3000 ):
+			dziadek_sounds.play_random_sound("fall short")
+		else: 
+			dziadek_sounds.play_random_sound("fall long")
+		if(pos.y > 500 and not get_node("../Camera2D/blackout_animation").is_playing()):
+			get_node("../Camera2D/blackout_animation").play("blackout")
+		falling_speed += delta * 50
 		if pos.y > 2900:
 			print("go to menu")
 			get_tree().change_scene_to(menu_scene)
@@ -209,6 +230,9 @@ func do_action():
 	print("do action ", staff.get_global_pos() + Vector2(0, STAFF_HEIGHT))
 	var current_platform = target_platform
 	target_platform = find_platform_at(get_global_pos() + staff_end)
+	if(target_platform == null or current_platform == null or target_platform == current_platform):
+		dziadek_sounds.play_random_sound("curse")
+	
 	
 	if target_platform == null:
 		die()
@@ -261,3 +285,7 @@ func find_platform_at(pos):
 				best_platform = platform
 	print("BEST: ",best_y_dist)
 	return best_platform
+	
+# new swing mech
+
+	
