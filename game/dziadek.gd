@@ -148,7 +148,7 @@ func _process(delta):
 		d.set_rotd(rot)
 	
 	staff_end = staff.get_global_pos() - get_global_pos()
-	update()
+	#update()
 	
 	if state == AIMING:
 		dziadek_sounds.play_random_sound("mumble")
@@ -258,8 +258,7 @@ func do_action():
 			return
 		state = STAFF_ANIM
 		staff_target = staff.get_global_pos()
-		var staff_height = staff.get_item_rect().size.y * get_scale().y
-		staff_target.y = target_platform.get_item_rect().pos.y * target_platform.get_scale().y + target_platform.get_global_pos().y - staff_height
+		staff_target.y = target_platform.get_item_rect().pos.y * target_platform.get_scale().y + target_platform.get_global_pos().y
 
 func die():
 	print("die :( at ", get_global_pos())

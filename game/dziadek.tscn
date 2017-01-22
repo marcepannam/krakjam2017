@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=1]
 
-[ext_resource path="res://sprites/dziadek/staff.tex" type="Texture" id=1]
+[ext_resource path="res://sprites/dziadek/WALKINGSTICK.tex" type="Texture" id=1]
 [ext_resource path="res://sprites/dziadek/HAND_l.tex" type="Texture" id=2]
 [ext_resource path="res://sprites/dziadek/CORPUS.tex" type="Texture" id=3]
 [ext_resource path="res://sprites/dziadek/HEAD.tex" type="Texture" id=4]
