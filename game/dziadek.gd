@@ -36,6 +36,8 @@ var menu_scene = preload("res://menu.tscn")
 var staff_end
 var shoulder_ref
 
+signal platform_changed
+
 func _ready():
 	set_process(true)
 	set_process_input(true)
@@ -52,6 +54,7 @@ func _ready():
 	
 func start_waiting():
 	print("ready ", get_global_pos())
+	emit_signal("platform_changed", target_platform)
 	animation_player.play("stand")
 	state = AIMING
 	# Should we rotate? Count platforms on the right and above.
