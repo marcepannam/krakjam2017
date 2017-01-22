@@ -114,10 +114,6 @@ script/script = ExtResource( 2 )
 
 editor/display_folded = true
 
-[node name="body" parent="dziadek/hip"]
-
-editor/display_folded = true
-
 [node name="dziadek_sounds" type="SamplePlayer" parent="dziadek"]
 
 config/polyphony = 2

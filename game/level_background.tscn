@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=1]
 
-[ext_resource path="res://sprites/world/level_foreground.tex" type="Texture" id=1]
+[ext_resource path="res://sprites/world/level_foreground_lighten base.tex" type="Texture" id=1]
 [ext_resource path="res://sprites/world/schemat.tex" type="Texture" id=2]
-[ext_resource path="res://sprites/dangling_objs/level_deco06.tex" type="Texture" id=3]
+[ext_resource path="res://sprites/dangling_objs/level_deco06_s.tex" type="Texture" id=3]
 [ext_resource path="res://sprites/dangling_objs/level_deco05.tex" type="Texture" id=4]
 [ext_resource path="res://sprites/dangling_objs/level_deco04.tex" type="Texture" id=5]
 [ext_resource path="res://sprites/dangling_objs/level_deco03.tex" type="Texture" id=6]
@@ -101,28 +101,24 @@ offset = Vector2( -0.301623, 48.9364 )
 [node name="kwiatek" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -51.7636, -903.477 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( 2.14101, 30.7301 )
 
 [node name="kwiatek1" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 87.0496, -178.679 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( 0.0758841, 30.3702 )
 
 [node name="kwiatek2" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( -69.2944, 460.906 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( 6.39079, 30.4271 )
 
 [node name="kwiatek3" type="Sprite" parent="foreground" groups=[ "danglings" ]]
 
 transform/pos = Vector2( 96.849, 1058.26 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( 1.95021, 26.1925 )
 
