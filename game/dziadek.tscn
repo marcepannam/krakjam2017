@@ -861,7 +861,7 @@ transform/pos = Vector2( 185.485, -11.1037 )
 transform/pos = Vector2( -40.8135, -319.458 )
 transform/rot = -4.04946
 texture = ExtResource( 7 )
-offset = Vector2( -31.7883, 79.5623 )
+offset = Vector2( 10, 79.5623 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="lamp" type="Sprite" parent="hip/body/arm_lamp"]
@@ -869,7 +869,7 @@ __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 transform/pos = Vector2( 7.40265, 183.212 )
 transform/rot = 4.04946
 texture = ExtResource( 8 )
-offset = Vector2( 0.809143, 56.3511 )
+offset = Vector2( 120, 110 )
 __meta__ = { "_edit_bone_":true }
 
 [node name="lamp_end" type="Position2D" parent="hip/body/arm_lamp/lamp"]
