@@ -19,6 +19,7 @@ const AIMING = 1
 const STAFF_ANIM = 2
 const JUMPING = 3
 const DEATH = 4
+const WON = 5
 
 # AIMING -> STAFF_ANIM -> WAITING -> JUMPING -> AIMING
 
@@ -40,6 +41,7 @@ var staff_ref
 var staff_hand
 var ordered
 var rot_base = 0
+var time_from_win = 0
 
 signal platform_changed
 
@@ -115,7 +117,7 @@ func check_side():
 		side = -1
 
 func win():
-	pass
+	state = WON
 
 func arr_interpolate(arr, v):
 	#print(arr, v)
@@ -144,6 +146,14 @@ func _process(delta):
 	var steps = [[-3000, 0], [-500, 0], [2500, 10], [4500, 20], [8500, 30], [15000, 40], [1000000, 40]]
 	var rotation_amplitude = arr_interpolate(steps, player_y)
 	var rotation_period = 3
+		
+	if state == WON:
+		time_from_win += delta
+		rotation_amplitude = (1 - min(time_from_win / 5, 1)) * rotation_amplitude
+		staff.set_opacity(0)
+		staff_hand.set_opacity(0)
+		var zoom = 8 + 8 * min(time_from_win / 5, 1)
+		camera.set_zoom(Vector2(zoom, zoom))
 	
 	rot_base = sin(gameTime / rotation_period * 3.1415 * 2)
 	var rot = rot_base * rotation_amplitude
@@ -171,7 +181,7 @@ func _process(delta):
 	staff_hand.set_region(true)
 	staff_hand.set_region_rect(rect)
 	
-	if state == AIMING || state == STAFF_ANIM:
+	if state == AIMING || state == STAFF_ANIM || state == WON:
 		# animate hand
 		staff_hand.set_global_pos(staff_ref.get_global_pos())
 		var hand_rot = 0
